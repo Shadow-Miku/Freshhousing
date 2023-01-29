@@ -28,6 +28,14 @@
         <legend>Información Propiedad</legend>
 
         <label for="habitaciones">Habitaciones:</label>
+        <input 
+        type="number" 
+        id="habitaciones" 
+        name="habitaciones" 
+        placeholder="Ej: 3" 
+        min="1" 
+        max="9" 
+        >
 
         <label for="wc">Baños:</label>
         <input type="number" id="wc" name="wc" placeholder="Ej: 3" min="1" max="9" >

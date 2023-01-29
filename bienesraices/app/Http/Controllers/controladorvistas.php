@@ -46,4 +46,12 @@ class controladorvistas extends Controller
     public function showCrear(){
         return view('crear');
         }
+    /*Funciones para Login*/
+    public function showLogin(){
+        return view('login');
+        }
+    /*Funciones para Login*/
+    public function showActualizar(){
+        return view('actualizar');
+        }
 }
