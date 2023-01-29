@@ -30,3 +30,6 @@ Route::get('blog', [controladorvistas::class,'showBlog'])->name('blog');
 
 Route::get('contacto', [controladorvistas::class,'showContacto'])->name('contacto');
 
+Route::get('menu', [controladorvistas::class,'showMenu'])->name('menu');
+
+Route::get('crear', [controladorvistas::class,'showCrear'])->name('crear');

@@ -38,5 +38,12 @@ class controladorvistas extends Controller
     public function showContacto(){
         return view('contacto');
     }
-
+    /*Funciones para MENÚ ANUNCIO*/
+    public function showMenu(){
+    return view('menu');
+    }
+    /*Funciones para Crear*/
+    public function showCrear(){
+        return view('crear');
+        }
 }
