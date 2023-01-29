@@ -33,3 +33,7 @@ Route::get('contacto', [controladorvistas::class,'showContacto'])->name('contact
 Route::get('menu', [controladorvistas::class,'showMenu'])->name('menu');
 
 Route::get('crear', [controladorvistas::class,'showCrear'])->name('crear');
+
+Route::get('actualizar', [controladorvistas::class,'showActualizar'])->name('actualizar');
+
+Route::get('login', [controladorvistas::class,'showLogin'])->name('login');
