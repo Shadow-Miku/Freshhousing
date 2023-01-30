@@ -2,10 +2,6 @@
 <?php $inicio = false ?>
 @section('contenido')
 
-<h1 class="display-1 mt-4 mb-4 text-center"> Anuncios publicados </h1>
-    
-    
-
       <main class="contenedor seccion">
         <h1>Administrador de Bienes Raices</h1>
 
@@ -18,7 +14,7 @@
         <a href="{{ route('crear') }}" class="boton boton-verde">Nueva Propiedad</a>
 
 
-        <table class="propiedades">
+        <table class="propiedades seccion">
             <thead>
                 <tr>
                     <th>ID</th>
