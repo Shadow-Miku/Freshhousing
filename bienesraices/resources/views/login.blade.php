@@ -17,7 +17,7 @@
         </fieldset>
     
         <!--<input type="submit" value="Iniciar Sesión" class="boton boton-verde">-->
-        <a href="{{ route('menu') }}" class="boton boton-verde">Iniciar Sesión</a>
+        <button type="submit" class="boton boton-verde">Iniciar Sesión</button>
     </form>
 </main>
 
