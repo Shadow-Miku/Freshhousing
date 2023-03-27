@@ -2,11 +2,11 @@
 <?php $inicio = false ?>
 @section('contenido')
 
-<h1>Crear</h1>    
+<h1>Crear</h1>
 
 <a href="{{ route('menu') }}" class="boton boton-verde">Volver</a>
 
-<form class="formulario" method="POST" action="" enctype="multipart/form-data">
+<form class="formulario" method="POST" action="" >
     <fieldset>
         <legend>Información General</legend>
 
@@ -28,13 +28,13 @@
         <legend>Información Propiedad</legend>
 
         <label for="habitaciones">Habitaciones:</label>
-        <input 
-        type="number" 
-        id="habitaciones" 
-        name="habitaciones" 
-        placeholder="Ej: 3" 
-        min="1" 
-        max="9" 
+        <input
+        type="number"
+        id="habitaciones"
+        name="habitaciones"
+        placeholder="Ej: 3"
+        min="1"
+        max="9"
         >
 
         <label for="wc">Baños:</label>

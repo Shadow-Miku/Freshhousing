@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('empleado.plantillaEmpleado')
 <?php $inicio = false ?>
 @section('contenido')
 
@@ -26,7 +26,7 @@
             </thead>
 
             <tbody> <!-- Mostrar los Resultados -->
-               
+
                 <tr>
                     <td> 1 </td>
                     <td> Casa en el lago </td>
@@ -39,7 +39,7 @@
 
                             <input type="submit" class="boton-rojo-block" value="Eliminar"> <!-- Mostrar los Resultados -->
                         </form>
-                        
+
                         <a href="{{ route('actualizar') }}" class="boton-amarillo-block">Actualizar</a>
                     </td>
                 </tr>
@@ -48,3 +48,5 @@
     </main>
 
 @stop
+
+

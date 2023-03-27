@@ -7,7 +7,7 @@
 
     <a href="{{ route('menu') }}" class="boton boton-verde">Volver</a>
 
-    <form class="formulario" method="POST" enctype="multipart/form-data">
+    <form class="formulario" method="POST">
         <fieldset>
             <legend>Información General</legend>
 
@@ -31,13 +31,13 @@
             <legend>Información Propiedad</legend>
 
             <label for="habitaciones">Habitaciones:</label>
-            <input 
-                type="number" 
-                id="habitaciones" 
-                name="habitaciones" 
-                placeholder="Ej: 3" 
-                min="1" 
-                max="9" 
+            <input
+                type="number"
+                id="habitaciones"
+                name="habitaciones"
+                placeholder="Ej: 3"
+                min="1"
+                max="9"
                 >
 
             <label for="wc">Baños:</label>
@@ -53,12 +53,12 @@
 
             <select name="vendedor">
                 <option value="">-- Seleccione --</option>
-                
+
             </select>
         </fieldset>
 
         <input type="submit" value="Actualizar Propiedad" class="boton boton-verde">
     </form>
-    
+
 </main>
 @stop

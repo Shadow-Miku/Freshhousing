@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fresh Housing</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
 
-    <header class="header <?php echo $inicio ?  'inicio' : '' ;?>">
+    <header class="header">
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
@@ -23,19 +23,12 @@
                 <div class="derecha">
                     <img class="dark-mode-boton" src="/img/dark-mode.svg">
                     <nav class="navegacion">
-                        <a href=" {{ route('nosotros') }} ">Nosotros</a>
-                        <a href=" {{ route('anuncios') }} ">Anuncios</a>
-                        <a href=" {{ route('blog') }} ">Blog</a>
-                        <a href=" {{ route('contacto') }} ">Contacto</a>
+                        <a href=" {{ route('admin.base') }} ">Panel de control</a>
+                        <a href="  ">A</a>
+                        <a href=" ">B</a>
+                        <a href="  ">C</a>
                     </nav>
                 </div>
-
-
-            </div> <!--.barra-->
-
-            <?php if($inicio) { ?>
-            <h1>Venta de Casas y Departamentos  Exclusivos de Lujo</h1>
-            <?php } ?>
 
         </div>
     </header>
@@ -52,15 +45,16 @@
 <footer class="footer seccion">
     <div class="contenedor contenedor-footer">
         <nav class="navegacion">
-            <a href=" {{ route('nosotros') }} ">Nosotros</a>
-            <a href=" {{ route('anuncios') }} ">Anuncios</a>
-            <a href=" {{ route('blog') }} ">Blog</a>
-            <a href=" {{ route('contacto') }} ">Contacto</a>
+            <a href=" {{ route('admin.base') }} ">Panel de control</a>
+            <a href=" ">A</a>
+            <a href=" ">B</a>
+            <a href=" ">C</a>
         </nav>
     </div>
     <p class="copyright">Tecnologías Frescas Todos los derechos Reservados <?php  echo date('Y');?> &copy;</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 <!--js del darkmode-->
 <script src="/js/bundle.min.js"></script>
 </body>
