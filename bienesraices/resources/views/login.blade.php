@@ -5,7 +5,8 @@
 <main class="contenedor seccion contenido-centrado">
     <h1>Iniciar Sesión</h1>
 
-    <form method="POST" class="formulario" novalidate>
+    <form method="POST" class="formulario" action="{{route('Iniciar.Sesion')}}">
+        @csrf
         <fieldset>
             <legend>Email y Password</legend>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controladorvistas;
+use App\Http\Controllers\ControladorLogin;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,14 @@ use App\Http\Controllers\controladorvistas;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Login
+//------------------LOGIN----------------------------
+Route::get('login', [ControladorLogin::class, 'login'])->name('login');
+Route::post('Incia/Sesion', [ControladorLogin::class, 'log'])->name('Iniciar.Sesion');
+Route::get('Cierra/Sesion', [ControladorLogin::class, 'logout'])->name('Cierra.Sesion');
+
+
 
 Route::get('/', [controladorvistas::class,'showIndex'])->name('index');  
 
@@ -36,4 +45,4 @@ Route::get('crear', [controladorvistas::class,'showCrear'])->name('crear');
 
 Route::get('actualizar', [controladorvistas::class,'showActualizar'])->name('actualizar');
 
-Route::get('login', [controladorvistas::class,'showLogin'])->name('login');
+// Route::get('login', [controladorvistas::class,'showLogin'])->name('login');
