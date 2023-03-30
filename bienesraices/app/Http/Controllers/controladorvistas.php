@@ -56,4 +56,7 @@ class controladorvistas extends Controller
         }
     public function showBaseAdm(){
         return view('admin.base');        }
+
+    public function showBaseEmp(){
+        return view('empleado.base');        }
 }

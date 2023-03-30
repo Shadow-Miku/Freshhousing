@@ -1,5 +1,5 @@
 @extends('admin.plantillaAdmin')
-
+<?php $inicio = false ?>
 @section('contenido')
 
 @if (session()->has('actualizar'))
@@ -58,12 +58,12 @@
           </tr>
         </thead>
 
-        <tbody style="background-color: #ffffff85;" class="text-primary">
+        <tbody style="background-color: #ffffff85;" >
           @foreach ($consultaUsu as $consulta)
             <tr>
               <th scope="row">{{ $consulta->id }}</th>
               <td>{{ $consulta->name }}</td>
-              <td><img src="{{ $consulta->url }}" alt="Foto del usuario" width="100" class="imagen-tabla"></td>
+              <td><img src="{{ $consulta->url }}" alt="Foto del usuario" class="imagen-tabla"></td>
               <td>{{ $consulta->email }}</td>
               <td>{{ $consulta->username }}</td>
               <td>{{ $consulta->roll }}</td>

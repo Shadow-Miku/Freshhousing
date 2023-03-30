@@ -76,3 +76,30 @@ Route::get('admin.adminUsu/{id}/show',[UserController::class,'show'])->name('adm
 //destroy
 Route::delete('admin.adminUsu/{id}',[UserController::class,'destroy'])->name('adminUsu.destroy');
 
+
+/*
+|--------------------------------------------------------------------------
+| CRUD Publicaciones empleados
+|--------------------------------------------------------------------------
+*/
+
+//index
+Route::get('empleado.menu',[InmueblesController::class,'index'])->name('publicacion.index');
+
+//Create
+Route::get('empleado.menu/create', [InmueblesController::class,'create'])->name('publicacion.create');
+
+//store
+Route::post('empleado.menu', [InmueblesController::class,'store'])->name('publicacion.store');
+
+//Edit
+Route::get('empleado.menu/{id}/edit',[InmueblesController::class,'edit'])->name('publicacion.edit');
+
+//Update
+Route::put('empleado.menu/{id}',[InmueblesController::class,'update'])->name('publicacion.update');
+
+//show
+Route::get('empleado.menu/{id}/show',[InmueblesController::class,'show'])->name('publicacion.show');
+
+//destroy
+Route::delete('empleado.menu/{id}',[InmueblesController::class,'destroy'])->name('publicacion.destroy');

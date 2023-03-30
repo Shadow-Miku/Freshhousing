@@ -1,5 +1,5 @@
-@extends('admin.plantillaAdmin')
-
+@extends('plantilla')
+<?php $inicio = false ?>
 @section('contenido')
 
 
