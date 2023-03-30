@@ -19,7 +19,7 @@ class LoginController extends Controller
                 return view('admin.base');
             }
             elseif ($user->roll === 'Empleado') {
-                return view('empleado.menu');
+                return view('empleado.base');
             }
         }
         return redirect()->back()->withErrors(['email' => 'Las credenciales proporcionadas son incorrectas.']);

@@ -1,6 +1,5 @@
-
-@extends('admin.plantillaAdmin')
-
+@extends('plantilla')
+<?php $inicio = false ?>
 @section('contenido')
 
 <form class="formulario" method="POST" action="{{route('adminUsu.destroy', $consultaId->id)}}">

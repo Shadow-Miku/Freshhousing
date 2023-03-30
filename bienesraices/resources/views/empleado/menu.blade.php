@@ -2,6 +2,30 @@
 <?php $inicio = false ?>
 @section('contenido')
 
+@if (session()->has('actualizar'))
+    {!!" <script> Swal.fire(
+        'Siuuuuuuuu!',
+        'Publicación actualizada',
+        'success'
+    ) </script>"!!}
+@endif
+
+@if (session()->has('elimina'))
+    {!!" <script> Swal.fire(
+        'F',
+        'Publicación eliminada',
+        'success'
+    ) </script>"!!}
+@endif
+
+@if (session()->has('confirmacion'))
+    {!!" <script> Swal.fire(
+        'Siuuuuuuuu!',
+        'Publicación registrada',
+        'success'
+    ) </script>"!!}
+@endif
+
       <main class="contenedor seccion">
         <h1>Administrador de Bienes Raices</h1>
 
@@ -11,10 +35,10 @@
                 <i class="bi bi-pen"></i> Buscar publicaciones </button>
         </form>
 
-        <a href="{{ route('crear') }}" class="boton boton-verde">Nueva Propiedad</a>
+        <a href="{{ route('publicacion.create') }}" class="boton boton-verde">Nueva Propiedad</a>
 
 
-        <table class="propiedades seccion">
+        <table class="propiedades">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -25,24 +49,24 @@
                 </tr>
             </thead>
 
-            <tbody> <!-- Mostrar los Resultados -->
+            <tbody style="background-color: #ffffff85;" > <!-- Mostrar los Resultados -->
+                @foreach ($consultaPub as $consulta)
+            <tr>
+                <td>{{$consulta->idPub}}</td>
+                <td>{{$consulta->titulo}}</td>
+                <td><img src="{{ $consulta->url }}"  alt="Foto de la propiedad" class="imagen-tabla"></td>
+                <td>{{$consulta->precio}}</td>
 
-                <tr>
-                    <td> 1 </td>
-                    <td> Casa en el lago </td>
-                    <td> <img src="/img/destacada.jpg" class="imagen-tabla"> </td>
-                    <td>$ 3,000,00</td>
-                    <td>
-                        <form method="POST" class="w-100">
-
-                            <input type="hidden" name="id" value="">
-
-                            <input type="submit" class="boton-rojo-block" value="Eliminar"> <!-- Mostrar los Resultados -->
-                        </form>
-
-                        <a href="{{ route('actualizar') }}" class="boton-amarillo-block">Actualizar</a>
-                    </td>
-                </tr>
+                <td>
+                    <button class="btn btn-warning" onclick="location.href='{{ route('publicacion.edit', $consulta->idPub) }}'">
+                        <i class="bi bi-pen"></i> Actualizar datos de la publicacion
+                    </button>
+                    <button class="btn btn-danger" onclick="location.href='{{ route('publicacion.show', $consulta->idPub) }}'">
+                        <i class="bi bi-pen"></i> Dar de baja la publicacion
+                    </button>
+                </td>
+            </tr>
+            @endforeach
             </tbody>
         </table>
     </main>

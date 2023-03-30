@@ -1,5 +1,5 @@
-@extends('admin.plantillaAdmin')
-
+@extends('plantilla')
+<?php $inicio = false ?>
 @section('contenido')
 
     @if (session()->has('confirmacion'))
@@ -21,7 +21,7 @@
                 <form class="formulario" method="post" action="{{route('adminUsu.store')}}" enctype="multipart/form-data">
                     @csrf
                     <!--Errores individuales y guardar los datos escritos-->
-                    <fieldset>
+                    <fieldset style="background-color: #24272480;">
                     <div class="mb-3">
                         <label class="form-label">Nombre y apellidos:</label>
                         <input type="text" class="form-control" name="name" value="{{old('name')}}">
