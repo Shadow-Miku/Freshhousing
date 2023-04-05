@@ -35,11 +35,6 @@ class InmueblesController extends Controller
         return view('anuncios', compact('publicaciones'));
     }
 
-    public function createanuncios()
-    {
-        return view('empleado.anuncios');
-    }
-
     public function create()
     {
         return view('empleado.crear');
