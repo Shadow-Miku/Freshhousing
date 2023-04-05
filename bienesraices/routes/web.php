@@ -103,3 +103,15 @@ Route::get('empleado.menu/{id}/show',[InmueblesController::class,'show'])->name(
 
 //destroy
 Route::delete('empleado.menu/{id}',[InmueblesController::class,'destroy'])->name('publicacion.destroy');
+
+
+//Anuncios
+
+//index
+Route::get('anuncios',[InmueblesController::class,'indexanuncios'])->name('publicaciones.index');
+//Create
+Route::get('anuncios/create', [InmueblesController::class,'createanuncios'])->name('publicacion.create');
+//show
+Route::get('anuncio/{id}/paginaPublicacion',[InmueblesController::class,'paginaPublicacion'])->name('publi.show');
+//index
+Route::get('index',[InmueblesController::class,'indexsex'])->name('indexsex.index');
