@@ -13,38 +13,38 @@ class controladorvistas extends Controller
      /*Funciones para ENTRADA*/
     public function showEntrada(){
         return view('entrada');
-    } 
+    }
      /*Funciones para NOSOTROS*/
     public function showNosotros(){
         return view('nosotros');
-    } 
+    }
     /*Funciones para ANUNCIO*/
     public function showAnuncio(){
         return view('anuncio');
-    } 
+    }
      /*Funciones para ANUNCIOS*/
     public function showAnuncios(){
         return view('anuncios');
-    } 
+    }
      /*Funciones para BASE*/
     public function showBase(){
         return view('base');
-    } 
+    }
      /*Funciones para BLOG*/
     public function showBlog(){
         return view('blog');
-    } 
+    }
      /*Funciones para CONTACTO*/
     public function showContacto(){
         return view('contacto');
     }
     /*Funciones para MENÚ ANUNCIO*/
     public function showMenu(){
-    return view('menu');
+    return view('empleado.menu');
     }
     /*Funciones para Crear*/
     public function showCrear(){
-        return view('crear');
+        return view('empleado.crear');
         }
     /*Funciones para Login*/
     public function showLogin(){
@@ -52,6 +52,11 @@ class controladorvistas extends Controller
         }
     /*Funciones para Login*/
     public function showActualizar(){
-        return view('actualizar');
+        return view('empleado.actualizar');
         }
+    public function showBaseAdm(){
+        return view('admin.base');        }
+
+    public function showBaseEmp(){
+        return view('empleado.base');        }
 }
