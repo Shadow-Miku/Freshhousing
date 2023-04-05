@@ -26,7 +26,7 @@
     </main>
 
     <section class="seccion contenedor">
-        <h2>Casas y Depas en Venta</h2>
+        <h2>Ejemplos de casas y departamentos</h2>
 
         <div class="contenedor-anuncios">
             <div class="anuncio">
@@ -56,9 +56,6 @@
                         </li>
                     </ul>
 
-                    <a href=" {{ route('anuncio') }} " class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
                 </div><!--.contenido-anuncio-->
             </div><!--anuncio-->
 
@@ -89,9 +86,6 @@
                         </li>
                     </ul>
 
-                    <a href=" {{ route('anuncio') }} " class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
                 </div><!--.contenido-anuncio-->
             </div><!--anuncio-->
 
@@ -122,16 +116,14 @@
                         </li>
                     </ul>
 
-                    <a href=" {{ route('anuncio') }} " class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
+
                 </div><!--.contenido-anuncio-->
             </div><!--anuncio-->
 
         </div> <!--.contenedor-anuncios-->
 
         <div class="alinear-derecha">
-            <a href=" {{ route('anuncios') }} " class="boton-verde">Ver Todas</a>
+            <a href=" {{ route('publicaciones.index') }} " class="boton-verde">Ver Todas</a>
         </div>
     </section>
 

@@ -27,6 +27,19 @@ class InmueblesController extends Controller
         return view('empleado.menu', compact('consultaPub', 'filtrar'));
     }
 
+    public function indexanuncios(Request $request)
+    {
+        $publicaciones = DB::table('publicaciones')
+        ->get();
+
+        return view('anuncios', compact('publicaciones'));
+    }
+
+    public function createanuncios()
+    {
+        return view('empleado.anuncios');
+    }
+
     public function create()
     {
         return view('empleado.crear');
@@ -117,4 +130,11 @@ class InmueblesController extends Controller
         return view('anuncio', compact('consultaId'));
     }
 
+    public function indexsex(Request $request)
+    {
+        $publicaciones = DB::table('publicaciones')
+        ->get();
+
+        return view('/', compact('publicaciones'));
+    }
 }
