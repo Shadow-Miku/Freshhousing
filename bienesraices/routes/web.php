@@ -5,6 +5,7 @@ use App\Http\Controllers\controladorvistas;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InmueblesController;
+use App\Http\Controllers\contactoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,7 @@ Route::get('base', [controladorvistas::class,'showBase'])->name('base');
 
 Route::get('blog', [controladorvistas::class,'showBlog'])->name('blog');
 
-Route::get('contacto', [controladorvistas::class,'showContacto'])->name('contacto');
+
 
 Route::get('menu', [controladorvistas::class,'showMenu'])->name('menu');
 
@@ -115,3 +116,8 @@ Route::get('anuncios/create', [InmueblesController::class,'createanuncios'])->na
 Route::get('anuncio/{id}/paginaPublicacion',[InmueblesController::class,'paginaPublicacion'])->name('publi.show');
 //index
 Route::get('index',[InmueblesController::class,'indexsex'])->name('indexsex.index');
+
+//Create
+Route::get('contacto/create', [contactoController::class,'create'])->name('contacto.create');
+//store
+Route::post('contacto', [contactoController::class,'store'])->name('contacto.store');
