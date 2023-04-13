@@ -30,7 +30,7 @@
                         <a href=" {{ route('nosotros') }} ">Nosotros</a>
                         <a href=" {{ route('publicaciones.index') }} ">Anuncios</a>
                         <a href=" {{ route('blog') }} ">Blog</a>
-                        <a href=" {{ route('contacto') }} ">Contacto</a>
+                        <a href=" {{ route('contacto.create') }} ">Contacto</a>
                     </nav>
                 </div>
 
@@ -59,7 +59,7 @@
             <a href=" {{ route('nosotros') }} ">Nosotros</a>
             <a href=" {{ route('publicaciones.index') }} ">Anuncios</a>
             <a href=" {{ route('blog') }} ">Blog</a>
-            <a href=" {{ route('contacto') }} ">Contacto</a>
+            <a href=" {{ route('contacto.create') }} ">Contacto</a>
         </nav>
     </div>
     <p class="copyright">Tecnologías Frescas Todos los derechos Reservados <?php  echo date('Y');?> &copy;</p>
