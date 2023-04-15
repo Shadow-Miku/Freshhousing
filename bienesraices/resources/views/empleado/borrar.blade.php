@@ -1,43 +1,42 @@
 @extends('plantilla')
 <?php $inicio = false ?>
 @section('contenido')
-
-<style>
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-</style>
-<div class="container">
-<form class="formulario" method="POST" action="{{route('publicacion.destroy', $consultaId->idPub)}}">
-
-    <fieldset>
-        <legend>¿Eliminar el siguiente Usuario?</legend>
-    <div class="card text-center">
-
+<div class="row justify-content-center align-items-center mt-5">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card border-0 shadow-lg rounded-lg">
         <div class="card-header">
-            <h5 class="text-primary text center">  </h5>
-        </div>
+          <div class="card-body bg-primary">
+            <div class="card">
+              <div class="card-body bg-secondary">
+                <div class="container">
+                  <form class="formulario" method="POST" action="{{ route('publicacion.destroy', $consultaId->idPub) }}">
+                    <fieldset>
+                      <legend>¿Eliminar la siguiente publicación?</legend>
+                      <div class="form-group">
+                        <p>Nombre: {{ $consultaId->titulo }}</p>
+                        <p>Descripción: {{ $consultaId->descripcion }}</p>
+                        <p>Costo: {{ $consultaId->precio }}</p>
+                        <p>Creado el: {{ $consultaId->created_at }}</p>
+                        <br>
+                        <img src="{{ $consultaId->url }}" style="max-width: 200px;">
+                        <br>
+                    </div>
+                    </fieldset>
 
-        <div class="card-body">
-            <label > Nombre: {{$consultaId->titulo}} </p>
-            <label > Correo: {{$consultaId->descripcion}} </p>
-            <label > Roll: {{$consultaId->precio}} </p>
-            <label > Creado el: {{$consultaId->created_at}} </p>
-                <img src="{{ $consultaId->url }}" style="max-width: 200px;">
+                    @csrf
+                    @method('delete')
+
+                    <div class="botones">
+                      <button type="submit" class="btn btn-danger ">Si, elimínalo</button>
+                      <a href="{{ route('publicacion.index') }}" class="btn btn-primary">No, regresa a admin</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </fieldset>
-            @csrf
-            @method('delete')
-        <div class="card-footer text-muted">
-        <button type="submit" class="btn btn-primary  m-1"> Si, eliminalo </button>
-        <a href="{{route('publicacion.index')}}" class="btn btn-warning">No, Regresa a admin </a>
-        </div>
-        </form>
+      </div>
     </div>
-</div>
-</form>
-</div>
+  </div>
 @stop

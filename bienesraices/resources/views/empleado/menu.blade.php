@@ -4,7 +4,7 @@
 
 @if (session()->has('actualizar'))
     {!!" <script> Swal.fire(
-        'Siuuuuuuuu!',
+        'Exito',
         'Publicación actualizada',
         'success'
     ) </script>"!!}
@@ -12,7 +12,7 @@
 
 @if (session()->has('elimina'))
     {!!" <script> Swal.fire(
-        'F',
+        'Completado',
         'Publicación eliminada',
         'success'
     ) </script>"!!}
@@ -20,14 +20,14 @@
 
 @if (session()->has('confirmacion'))
     {!!" <script> Swal.fire(
-        'Siuuuuuuuu!',
+        'Exito',
         'Publicación registrada',
         'success'
     ) </script>"!!}
 @endif
 
       <main class="contenedor seccion">
-        <h1>Administrador de Bienes Raices</h1>
+        <h1>Administrador de Publicaciones</h1>
 
         <form action="#">
             <input type="search" placeholder="Buscar anuncio..." name="filtrar" class="form-control">

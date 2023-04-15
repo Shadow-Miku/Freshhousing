@@ -1,32 +1,32 @@
 @extends('plantilla')
 <?php $inicio = false ?>
 @section('contenido')
-
-<form class="formulario" method="POST" action="{{route('adminUsu.destroy', $consultaId->id)}}">
-
-        <fieldset>
-            <legend>¿Eliminar el siguiente Usuario?</legend>
-        <div class="card text-center">
-
-            <div class="card-header">
-                <h5 class="text-primary text center">  </h5>
+<div class="row justify-content-center align-items-center mt-5">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card border-0 shadow-lg rounded-lg">
+            <div class="card-header bg-primary text-center">
+                <h5 class="text-white">Eliminar Usuario</h5>
             </div>
-
-            <div class="card-body">
-                <label > Nombre: {{$consultaId->name}} </p>
-		        <label > Correo: {{$consultaId->email}} </p>
-		        <label > Roll: {{$consultaId->roll}} </p>
-                <label > Creado el: {{$consultaId->created_at}} </p>
+            <div class="card-body bg-secondary">
+                <form class="formulario" method="POST" action="{{route('adminUsu.destroy', $consultaId->id)}}">
+                    <fieldset>
+                        <legend>¿Eliminar el siguiente Usuario?</legend>
+                        <div class="form-group">
+                            <label>Nombre: {{$consultaId->name}}</label>
+                            <label>Correo: {{$consultaId->email}}</label>
+                            <label>Roll: {{$consultaId->roll}}</label>
+                            <label>Creado el: {{$consultaId->created_at}}</label>
+                        </div>
+                    </fieldset>
+                    @csrf
+                    @method('delete')
+                    <div class="botones">
+                        <button type="submit" class="btn btn-danger m-1">Si, elimínalo</button>
+                        <a href="{{route('adminUsu.index')}}" class="btn btn-primary m-1">No, regresa a admin</a>
+                    </div>
+                </form>
             </div>
-        </fieldset>
-                @csrf
-                @method('delete')
-            <div class="card-footer text-muted">
-            <button type="submit" class="btn btn-primary  m-1"> Si, eliminalo </button>
-            <a href="{{route('adminUsu.index')}}" class="btn btn-warning">No, Regresa a admin </a>
-            </div>
-            </form>
         </div>
     </div>
-</form>
+</div>
 @stop
