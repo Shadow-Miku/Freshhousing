@@ -3,7 +3,7 @@
 @section('contenido')
 
 <main class="contenedor seccion">
-    <h1>Actualizar Propiedad</h1>
+    <h1>Actualizar Publicacion</h1>
 
     <a href="{{ route('menu') }}" class="boton boton-verde">Volver</a>
 
