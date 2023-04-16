@@ -17,12 +17,18 @@ class InmueblesController extends Controller
 
         $consultaPub = DB::table('publicaciones')
             ->join('users', 'publicaciones.autorid', '=', 'users.id')
-            ->where('publicaciones.titulo', 'like', '%' . $filtrar . '%')
-            ->orWhere('publicaciones.descripcion', 'like', '%' . $filtrar . '%')
-            ->orWhere('users.name', 'like', '%' . $filtrar . '%')
-            ->orWhere('publicaciones.created_at', 'like', '%' . $filtrar . '%')
+            ->where('publicaciones.autorid', '=', auth()->user()->id)
+            ->where(function($query) use ($filtrar) {
+                $query->where('publicaciones.titulo', 'like', '%' . $filtrar . '%')
+                    ->orWhere('publicaciones.descripcion', 'like', '%' . $filtrar . '%')
+                    ->orWhere('publicaciones.habitaciones', 'like', '%' . $filtrar . '%')
+                    ->orWhere('publicaciones.baños', 'like', '%' . $filtrar . '%')
+                    ->orWhere('publicaciones.estacionamiento', 'like', '%' . $filtrar . '%')
+                    ->orWhere('publicaciones.created_at', 'like', '%' . $filtrar . '%');
+            })
             ->select('publicaciones.*', 'users.name as autor_name')
             ->get();
+
 
         return view('empleado.menu', compact('consultaPub', 'filtrar'));
     }

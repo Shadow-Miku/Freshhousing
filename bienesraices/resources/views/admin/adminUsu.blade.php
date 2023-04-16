@@ -40,7 +40,7 @@
 </div>
 
     <div class="container my-5">
-      <button class="boton boton-verde" onclick="location.href='{{ route('adminUsu.create') }}'">
+      <button class="btn btn-success" onclick="location.href='{{ route('adminUsu.create') }}'">
         <i class="bi bi-plus"></i> Registrar otro usuario
       </button>
 
@@ -63,7 +63,7 @@
             <tr>
               <th scope="row">{{ $consulta->id }}</th>
               <td>{{ $consulta->name }}</td>
-              <td><img src="{{ $consulta->url }}" alt="Foto del usuario" class="imagen-tabla"></td>
+              <td><img src="{{ $consulta->url }}" alt="Foto del usuario" class="imagen-small"></td>
               <td>{{ $consulta->email }}</td>
               <td>{{ $consulta->username }}</td>
               <td>{{ $consulta->roll }}</td>
@@ -77,18 +77,18 @@
                 @endif
               </td>
               <td>
-                <button class="boton-amarillo-block" onclick="location.href='{{ route('adminUsu.edit', $consulta->id) }}'">
+                <button class="btn btn-warning" onclick="location.href='{{ route('adminUsu.edit', $consulta->id) }}'">
                   <i class="bi bi-pen"></i> Actualizar datos del {{ $consulta->roll }}
                 </button>
               </td>
 
               <td>
                 @if ($consulta->roll == 'Empleado' )
-                <button type="button" class="boton-rojo-block" onclick="location.href='{{ route('adminUsu.show', $consulta->id) }}'">
+                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('adminUsu.show', $consulta->id) }}'">
                   <i class="bi bi-trash2"></i> Dar de baja {{ $consulta->roll }}
                 </button>
                 @else
-                <button type="button" class="boton-rojo-block" disabled>
+                <button type="button" class="btn btn-danger" disabled>
                   <i class="bi bi-trash2"></i> Dar de baja {{ $consulta->roll }}
                 </button>
                 @endif

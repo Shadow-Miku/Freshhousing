@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('admin.plantillaAdmin')
 <?php $inicio = false ?>
 @section('contenido')
 
@@ -10,11 +10,9 @@
           ) </script>"!!}
     @endif
 
-    <div class="container mt-5 col-md-6">
-
+    <div class="contenedor seccion">
         <h1 class="display-2 text-center mb-5"> Registrar Usuarios </h1>
-
-        <div class="card mb-5">
+        <div class="card-body">
 
             <div class="card-body">
 
@@ -67,9 +65,10 @@
             </div>
 
             <div class="card-footer">
-
-                <button type="submit" class="boton boton-verde"> Registrar usuario </button>
-                <a href="{{route('adminUsu.index')}}" class="btn btn-warning">No, hacer nada </a>
+            <div class="d-flex justify-content-between">
+                <a href="{{ url()->previous() }}" class="btn btn-primary">Volver</a>
+                <button type="submit" class="btn btn-success"> Registrar usuario </button>
+            </div>
             </form>
 
             </div>

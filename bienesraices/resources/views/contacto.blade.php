@@ -53,7 +53,10 @@
                 <p class="text-primary fst-italic"> {{ $errors->first('mensaje') }} </p>
                 </div>
             </fieldset>
-            <input type="submit" value="Enviar" class="boton-verde">
+            <div class="d-flex justify-content-between">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">Volver</a>
+                <input type="submit" value="Enviar" class="btn btn-success">
+            </div>
         </form>
     </main>
 @stop

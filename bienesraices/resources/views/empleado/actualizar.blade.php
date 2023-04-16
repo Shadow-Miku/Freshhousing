@@ -1,16 +1,14 @@
-@extends('plantilla')
+@extends('empleado.plantillaEmpleado')
 <?php $inicio = false ?>
 @section('contenido')
 
 <main class="contenedor seccion">
     <h1>Actualizar Publicacion</h1>
 
-    <a href="{{ route('menu') }}" class="boton boton-verde">Volver</a>
-
     <form class="formulario" method="POST" action="{{route('publicacion.update',$consultaId->idPub)}}" enctype="multipart/form-data">
         @csrf
         {!! method_field('PUT')!!}
-        <fieldset>
+        <fieldset style="background-color: #24272480;">
             <legend>Información General</legend>
 
             <div class="mb-3" hidden>
@@ -35,7 +33,7 @@
 
         </fieldset>
 
-        <fieldset>
+        <fieldset style="background-color: #24272480;">
             <legend>Información Propiedad</legend>
 
             <label for="habitaciones">Habitaciones:</label>
@@ -57,8 +55,11 @@
             <input class="form-control" type="number" id="estacionamiento" name="estacionamiento" placeholder="Ej: 3" min="1" max="9" value="{{$consultaId->estacionamiento}}">
 
         </fieldset>
-
-        <input class="form-control" type="submit" value="Actualizar Propiedad" class="boton boton-verde">
+        <br>
+        <div class="d-flex justify-content-between">
+            <a href="{{ url()->previous() }}" class="btn btn-secondary">Volver</a>
+        <input type="submit" value="Actualizar Propiedad" class="btn btn-success">
+        </div>
     </form>
 
 </main>

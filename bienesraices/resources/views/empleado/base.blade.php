@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('empleado.plantillaEmpleado')
 
 <?php $inicio = false ?>
 @section('contenido')
@@ -8,7 +8,7 @@
 <div class="col-12 col-md-8 col-lg-6">
 <div class="card border-0 shadow-lg rounded-lg">
 <div class="card-header bg-primary">
-<h4 class="font-weight-bold mb-0">¡Bienvenido, {{ auth()->user()->name }}!</h4>
+<h4 class="font-weight-bold mb-0">¡Bienvenid@, {{ auth()->user()->name }}!</h4>
 </div>
 <div class="card-body bg-secondary">
 <p class="card-text lead mb-4">Estás en el panel de control de tu cuenta.

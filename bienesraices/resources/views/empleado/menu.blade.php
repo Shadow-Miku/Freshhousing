@@ -29,13 +29,18 @@
       <main class="contenedor seccion">
         <h1>Administrador de Publicaciones</h1>
 
-        <form action="#">
-            <input type="search" placeholder="Buscar anuncio..." name="filtrar" class="form-control">
-              <button type="submit" class="btn btn-primary">
-                <i class="bi bi-pen"></i> Buscar publicaciones </button>
-        </form>
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-6">
+                <form action="{{route('publicaciones.index')}}">
+                    <div class="input-group">
+                        <input type="search" placeholder="Buscar usuario..." name="filtrar" class="form-control">
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-        <a href="{{ route('publicacion.create') }}" class="boton boton-verde">Nueva Propiedad</a>
+        <a href="{{ route('publicacion.create') }}" class="btn btn-success">Nueva Propiedad</a>
 
 
         <table class="propiedades">
@@ -54,7 +59,7 @@
             <tr>
                 <td>{{$consulta->idPub}}</td>
                 <td>{{$consulta->titulo}}</td>
-                <td><img src="{{ $consulta->url }}"  alt="Foto de la propiedad" class="imagen-tabla"></td>
+                <td><img src="{{ $consulta->url }}"  alt="Foto de la propiedad" class="imagen-small"></td>
                 <td>{{$consulta->precio}}</td>
 
                 <td>

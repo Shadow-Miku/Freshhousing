@@ -231,11 +231,28 @@ select,.dark-mode .formulario textarea{background-color:#333;border:1px solid #3
 .navegacion a:hover{color:#71b100}@media (min-width:768px){.mobile-menu{display:none}}
 .mobile-menu img{width:5rem}.mostrar{visibility:visible;opacity:1;height:auto}@media (min-width:768px){.iconos-nosotros{display:grid;gap:2rem;grid-template-columns:repeat(3,1fr)}}.icono{text-align:center}
 .icono img{height:10rem}.icono h3{text-transform:uppercase}@media (min-width:768px){.contenedor-anuncios{display:grid;gap:2rem;grid-template-columns:repeat(3,1fr)}}
-.anuncio{background-color:#eee;border:1px solid #c8c8c8;margin-bottom:2rem}
-.anuncio .contenido-anuncio{padding:2rem}
-.anuncio h3,.anuncio p{margin:0}
-.precio{color:#71b100;font-weight:700;font-size:3rem}
-.iconos-caracteristicas{display:flex;list-style:none;padding:0;max-width:40rem}
+.anuncio {
+    background-color:#eee;
+    border:1px solid #c8c8c8;
+    margin-bottom:2rem
+}
+
+.anuncio .contenido-anuncio {
+    padding:2rem
+}
+.anuncio h3,.anuncio p {
+    margin:0
+}
+.precio {
+    color:#71b100;
+    font-weight:700;
+    font-size:3rem
+}
+.iconos-caracteristicas {
+    display:flex;list-style:none;
+    padding:0;
+    max-width:40rem
+}
 .iconos-caracteristicas li{flex:1;display:flex}
 .iconos-caracteristicas li img{flex:0 0 3rem;margin-right:1rem}
 .iconos-caracteristicas li p{font-weight:900}.no-webp .imagen-contacto{background-image:url(../img/encuentra.jpg)}.webp .imagen-contacto{background-image:url(../img/encuentra.webp)}.imagen-contacto{background-position:50%;background-size:cover;padding:10rem 0;display:flex;flex-direction:column;align-items:center}.imagen-contacto h2{font-size:4rem;font-weight:900;color:#fff}
@@ -256,10 +273,25 @@ select,.dark-mode .formulario textarea{background-color:#333;border:1px solid #3
 .formulario textarea{height:20rem}.formulario .forma-contacto{max-width:30rem;display:flex;justify-content:space-between;align-items:center}
 .formulario input[type=radio]{margin:0;width:auto}@media (min-width:768px){.contenido-nosotros{display:grid;gap:2rem;grid-template-columns:repeat(2,1fr)}}
 .texto-nosotros blockquote{font-weight:900;font-size:2.2rem;margin:3rem 0 0;padding-left:1rem 0 3rem 0}
-.alerta{padding:.5rem;text-align:center;color:#fff;font-weight:700;text-transform:uppercase;margin:1rem 0}
-.alerta.error{background-color:#bd0707}
-.alerta.exito{background-color:#71b100}
-table.propiedades{margin-top:4rem;width:100%;border-spacing:0}
+.alerta {
+    padding:.5rem;
+    text-align:center;
+    color:#fff;
+    font-weight:700;
+    text-transform:uppercase;
+    margin:1rem 0
+}
+.alerta.error{
+    background-color:#bd0707
+}
+.alerta.exito {
+    background-color:#71b100
+}
+table.propiedades{
+    margin-top:4rem;
+    width:100%;
+    border-spacing:0
+}
 table.propiedades thead {
     background-color:#71b100
 }

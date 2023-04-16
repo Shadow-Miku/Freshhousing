@@ -27,10 +27,10 @@
                 <div class="derecha">
                     <img class="dark-mode-boton" src="/img/dark-mode.svg">
                     <nav class="navegacion">
-                        <a href=" {{ route('nosotros') }} ">Nosotros</a>
+                        <a hidden href=" {{ route('nosotros') }} ">Nosotros</a>
                         <a href=" {{ route('publicaciones.index') }} ">Anuncios</a>
-                        <a href=" {{ route('blog') }} ">Blog</a>
-                        <a href=" {{ route('contacto.create') }} ">Contacto</a>
+                        <a hidden href=" {{ route('blog') }} ">Blog</a>
+                        <a href=" {{ route('login') }} ">Salir</a>
                     </nav>
                 </div>
 
@@ -56,10 +56,10 @@
 <footer class="footer seccion">
     <div class="contenedor contenedor-footer">
         <nav class="navegacion">
-            <a href=" {{ route('nosotros') }} ">Nosotros</a>
+            <a hidden href=" {{ route('nosotros') }} ">Nosotros</a>
             <a href=" {{ route('publicaciones.index') }} ">Anuncios</a>
-            <a href=" {{ route('blog') }} ">Blog</a>
-            <a href=" {{ route('contacto.create') }} ">Contacto</a>
+            <a hidden href=" {{ route('blog') }} ">Blog</a>
+            <a href=" {{ route('login') }} ">Salir</a>
         </nav>
     </div>
     <p class="copyright">Tecnologías Frescas Todos los derechos Reservados <?php  echo date('Y');?> &copy;</p>
