@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('admin.plantillaAdmin')
 <?php $inicio = false ?>
 @section('contenido')
 <div class="row justify-content-center align-items-center mt-5">
@@ -20,9 +20,9 @@
                     </fieldset>
                     @csrf
                     @method('delete')
-                    <div class="botones">
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url()->previous() }}" class="btn btn-primary">Volver</a>
                         <button type="submit" class="btn btn-danger m-1">Si, elimínalo</button>
-                        <a href="{{route('adminUsu.index')}}" class="btn btn-primary m-1">No, regresa a admin</a>
                     </div>
                 </form>
             </div>

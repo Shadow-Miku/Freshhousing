@@ -5,16 +5,16 @@
     <main class="contenedor seccion">
 
         <h2>Casas y Depas en Venta</h2>
-       
+
         <div class="contenedor-anuncios">
         @foreach ($publicaciones as $publicacion)
             <div class="anuncio">
-                <picture>
+                <picture class="imagen">
                     <source srcset="{{ $publicacion->url }}">
                     <source srcset="/img/anuncio1.jpg" type="image/jpeg">
                     <img loading="lazy" src="/img/anuncio1.jpg" alt="anuncio">
                 </picture>
-                
+
                 <div class="contenido-anuncio">
                     <h3>{{ $publicacion->titulo }}</h3>
                     <p>{{ $publicacion->descripcion }}</p>

@@ -26,9 +26,9 @@
                     <img class="dark-mode-boton" src="/img/dark-mode.svg">
                     <nav class="navegacion">
                         <a href=" {{ route('admin.base') }} ">Panel de control</a>
-                        <a href="  ">A</a>
-                        <a href=" ">B</a>
-                        <a href="  ">C</a>
+                        <a hidden href="  ">A</a>
+                        <a hidden href=" ">B</a>
+                        <a href=" {{ route('login') }}  ">Salir</a>
                     </nav>
                 </div>
 
@@ -47,10 +47,10 @@
 <footer class="footer seccion">
     <div class="contenedor contenedor-footer">
         <nav class="navegacion">
-            <a href=" {{ route('admin.base') }} ">Panel de control</a>
-            <a href=" ">A</a>
-            <a href=" ">B</a>
-            <a href=" ">C</a>
+            <a href=" {{ route('admin.base') }} "> Panel de control </a>
+            <a hidden href=" ">A</a>
+            <a hidden href=" ">B</a>
+            <a href=" {{ route('login') }} "> Salir </a>
         </nav>
     </div>
     <p class="copyright">Tecnologías Frescas Todos los derechos Reservados <?php  echo date('Y');?> &copy;</p>

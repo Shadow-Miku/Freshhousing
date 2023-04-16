@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('empleado.plantillaEmpleado')
 <?php $inicio = false ?>
 @section('contenido')
 <div class="row justify-content-center align-items-center mt-5">
@@ -26,9 +26,9 @@
                     @csrf
                     @method('delete')
 
-                    <div class="botones">
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ route('publicacion.index') }}" class="btn btn-primary">No, regresa a admin</a>
                       <button type="submit" class="btn btn-danger ">Si, elimínalo</button>
-                      <a href="{{ route('publicacion.index') }}" class="btn btn-primary">No, regresa a admin</a>
                     </div>
                   </form>
                 </div>

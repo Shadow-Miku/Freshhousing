@@ -2,7 +2,7 @@
 <?php $inicio = true ?>
 @section('contenido')
 
-     
+
     <main class="contenedor seccion">
         <h1>Más Sobre Nosotros</h1>
 
@@ -123,14 +123,14 @@
         </div> <!--.contenedor-anuncios-->
 
         <div class="alinear-derecha">
-            <a href=" {{ route('publicaciones.index') }} " class="boton-verde">Ver Todas</a>
+            <a href=" {{ route('publicaciones.index') }} " class="btn btn-success">Ver Todas</a>
         </div>
     </section>
 
     <section class="imagen-contacto">
         <h2>Encuentra la casa de tus sueños</h2>
         <p>Llena el formulario de contacto y un asesor se pondrá en contacto contigo a la brevedad</p>
-        <a href=" {{ route('contacto.create') }} " class="boton-amarillo">Contactános</a>
+        <a href=" {{ route('contacto.create') }} " class="btn btn-warning">Contactános</a>
     </section>
 
     <div class="contenedor seccion seccion-inferior">
