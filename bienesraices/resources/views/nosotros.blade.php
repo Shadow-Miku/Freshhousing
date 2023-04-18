@@ -1,54 +1,86 @@
 @extends('plantilla')
 <?php $inicio = false ?>
 @section('contenido')
-
-    <main class="contenedor seccion">
-        <h1>Conoce sobre Nosotros</h1>
-        <div class="contenido-nosotros">
-            <div class="imagen">
-                <picture>
-                    <source srcset="/img/nosotros.webp" type="image/webp">
-                    <source srcset="/img/nosotros.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/img/nosotros.jpg" alt="Sobre Nosotros">
-                </picture>
-            </div>
-
-            <div class="texto-nosotros">
-                <blockquote>
-                    25 Años de experiencia
-                </blockquote>
-
-                <p>Proin consequat viverra sapien, malesuada tempor tortor feugiat vitae. In dictum felis et nunc aliquet molestie. Proin tristique commodo felis, sed auctor elit auctor pulvinar. Nunc porta, nibh quis convallis sollicitudin, arcu nisl semper mi, vitae sagittis lorem dolor non risus. Vivamus accumsan maximus est, eu mollis mi. Proin id nisl vel odio semper hendrerit. Nunc porta in justo finibus tempor. Suspendisse lobortis dolor quis elit suscipit molestie. Sed condimentum, erat at tempor finibus, urna nisi fermentum est, a dignissim nisi libero vel est. Donec et imperdiet augue. Curabitur malesuada sodales congue. Suspendisse potenti. Ut sit amet convallis nisi.</p>
-
-                <p>Aliquam lectus magna, luctus vel gravida nec, iaculis ut augue. Praesent ac enim lorem. Quisque ac dignissim sem, non condimentum orci. Morbi a iaculis neque, ac euismod felis. Fusce augue quam, fermentum sed turpis nec, hendrerit dapibus ante. Cras mattis laoreet nibh, quis tincidunt odio fermentum vel. Nulla facilisi.</p>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>Change a map's style</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+    </head>
+    <body>
+    <style>
+    #menu {
+    position: absolute;
+    background: #efefef;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    }
+</style>
+<main class="contenedor seccion">
+    <h1>Sobre nuestra Empresa de Bienes Raíces</h1>
+    <div class="contenido-nosotros">
+        <div class="imagen">
+            <picture>
+                <source srcset="/img/nosotros.webp" type="image/webp">
+                <source srcset="/img/nosotros.jpg" type="image/jpeg">
+                <img loading="lazy" src="/img/nosotros.jpg" alt="Sobre Nosotros">
+            </picture>
         </div>
-    </main>
+        <div class="texto-nosotros">
+            <blockquote>
+                25 Años de experiencia en el mercado
+            </blockquote>
 
-    <section class="contenedor seccion">
-        <h1>Más Sobre Nosotros</h1>
-        <br>
-        <div class="iconos-nosotros">
+            <p>Somos una empresa de bienes raíces especializada en la compra, venta y renta de propiedades de alta calidad. Nos enorgullecemos de brindar un servicio excepcional y personalizado a cada uno de nuestros clientes.</p>
 
-            <div class="icono">
-                <img src="/img/icono1.svg" alt="Icono seguridad" loading="lazy">
-                <br>
-                <h3>Seguridad</h3>
-                <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
-            </div>
-
-            <div class="icono">
-                <img src="/img/icono2.svg" alt="Icono Precio" loading="lazy">
-                <h3>Precio</h3>
-                <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
-            </div>
-
-            <div class="icono">
-                <img src="/img/icono3.svg" alt="Icono Tiempo" loading="lazy">
-                <h3>A Tiempo</h3>
-                <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
-            </div>
-
+            <p>Contamos con un equipo de expertos en el mercado inmobiliario que se encargan de ofrecer soluciones únicas a las necesidades de cada cliente. Nuestra misión es superar las expectativas de nuestros clientes y asegurarnos de que tengan una experiencia satisfactoria al trabajar con nosotros.</p>
         </div>
-    </section>
+    </div>
+</main>
+
+<section class="contenedor seccion">
+    <h1>Nuestros Valores</h1>
+    <br>
+    <div class="iconos-nosotros">
+
+        <div class="icono">
+            <img src="/img/icono1.svg" alt="Icono seguridad" loading="lazy">
+            <br>
+            <h3>Seguridad</h3>
+            <p>En nuestra empresa, la seguridad es nuestra máxima prioridad. Nos aseguramos de que todas las transacciones sean seguras y confidenciales.</p>
+        </div>
+
+        <div class="icono">
+            <img src="/img/icono2.svg" alt="Icono Precio" loading="lazy">
+            <h3>Precio justo</h3>
+            <p>Valoramos la honestidad y la transparencia en todas nuestras transacciones. Nos aseguramos de ofrecer precios justos y competitivos a todos nuestros clientes.</p>
+        </div>
+
+        <div class="icono">
+            <img src="/img/icono3.svg" alt="Icono Tiempo" loading="lazy">
+            <h3>Puntualidad</h3>
+            <p>Nos comprometemos a cumplir con los plazos acordados y a ofrecer un servicio puntual y eficiente.</p>
+        </div>
+
+    </div>
+</section>
+<section>
+    <h1>Nos puedes encontrar aqui</h1>
+    // Leaflet
+    // Mapa de ubicación de nuestras propiedades
+    <x-maps-leaflet
+        :centerPoint="['lat' => 20.58806, 'long' => -100.38806]"
+        :zoomLevel="16"
+        :markers="[['lat' => 20.589872, 'long' => -100.3870118]]"
+        >
+    </x-maps-leaflet>
+</section>
+
+
+
 @stop
