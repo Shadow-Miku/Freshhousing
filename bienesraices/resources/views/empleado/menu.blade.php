@@ -31,16 +31,16 @@
 
         <div class="row justify-content-center mb-4">
             <div class="col-lg-6">
-                <form action="{{route('publicaciones.index')}}">
+                <form action="{{route('publicacion.index')}}">
                     <div class="input-group">
-                        <input type="search" placeholder="Buscar usuario..." name="filtrar" class="form-control">
+                        <input type="search" placeholder="Buscar publicaciones..." name="filtrar" class="form-control">
                         <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Buscar</button>
                     </div>
                 </form>
             </div>
         </div>
 
-        <a href="{{ route('publicacion.create') }}" class="btn btn-success">Nueva Propiedad</a>
+        <a href="{{ route('publicacion.create') }}" class="btn btn-success bi bi-plus-lg">Nueva Propiedad</a>
 
 
         <table class="propiedades">
@@ -64,10 +64,10 @@
 
                 <td>
                     <button class="btn btn-warning" onclick="location.href='{{ route('publicacion.edit', $consulta->idPub) }}'">
-                        <i class="bi bi-pen"></i> Actualizar datos de la publicacion
+                        <i class="bi bi-arrow-clockwise"></i> Actualizar datos de la publicacion
                     </button>
                     <button class="btn btn-danger" onclick="location.href='{{ route('publicacion.show', $consulta->idPub) }}'">
-                        <i class="bi bi-pen"></i> Dar de baja la publicacion
+                        <i class="bi bi-trash2"></i> Dar de baja la publicacion
                     </button>
                 </td>
             </tr>

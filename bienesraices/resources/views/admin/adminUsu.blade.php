@@ -4,7 +4,7 @@
 
 @if (session()->has('actualizar'))
     {!!" <script> Swal.fire(
-        'Siuuuuuuuu!',
+        'Exito',
         'Usuario actualizado',
         'success'
     ) </script>"!!}
@@ -12,7 +12,7 @@
 
 @if (session()->has('elimina'))
     {!!" <script> Swal.fire(
-        'F',
+        'Exito',
         'Usuario eliminado',
         'success'
     ) </script>"!!}
@@ -20,7 +20,7 @@
 
 @if (session()->has('confirmacion'))
     {!!" <script> Swal.fire(
-        'Siuuuuuuuu!',
+        'Exito',
         'Usuario registrado',
         'success'
     ) </script>"!!}
@@ -78,7 +78,7 @@
               </td>
               <td>
                 <button class="btn btn-warning" onclick="location.href='{{ route('adminUsu.edit', $consulta->id) }}'">
-                  <i class="bi bi-pen"></i> Actualizar datos del {{ $consulta->roll }}
+                  <i class="bi-arrow-clockwise"></i> Actualizar datos del {{ $consulta->roll }}
                 </button>
               </td>
 
