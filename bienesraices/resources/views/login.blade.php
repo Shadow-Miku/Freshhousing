@@ -18,7 +18,7 @@
         </fieldset>
 
         <!--<input type="submit" value="Iniciar Sesión" class="boton boton-verde">-->
-        <button type="submit" class="btn btn-success"  class="boton boton-verde">Iniciar Sesión</button>
+        <button type="submit" class="btn btn-success bi bi-arrow-right"  class="boton boton-verde">Iniciar Sesión</button>
     </form>
 </main>
 
