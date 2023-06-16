@@ -17,7 +17,7 @@
             <input type="password" name="password" class="form-controll" id="exampleInputPassword1" value="{{old('password')}}" required>
         </fieldset>
 
-        <!--<input type="submit" value="Iniciar Sesión" class="boton boton-verde">-->
+        <a href=" {{ route('adminUsu.index') }} ">Pruebas</a>
         <button type="submit" class="btn btn-success bi bi-arrow-right"  class="boton boton-verde">Iniciar Sesión</button>
     </form>
 </main>

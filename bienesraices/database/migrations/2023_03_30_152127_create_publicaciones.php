@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('titulo');
             $table->float('precio',14,2);
             $table->string('url')->nullable();
-            $table->string('descripcion');
+            $table->text('descripcion');
             $table->integer('habitaciones');
             $table->integer('baños');
             $table->integer('estacionamiento');
