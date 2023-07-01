@@ -12,6 +12,7 @@
         </picture>
 
         <div class="resumen-propiedad">
+            <p class="categoria">{{ $consultaId->categoria }}</p>
             <p class="precio">${{ $consultaId->precio }}</p>
             <ul class="iconos-caracteristicas">
                 <li>
@@ -25,6 +26,10 @@
                 <li>
                     <img class="icono"  loading="lazy" src="/img/icono_dormitorio.svg" alt="icono habitaciones">
                     <p>{{ $consultaId->habitaciones }}</p>
+                </li>
+                <li>
+                    <img class="icono" loading="lazy" src="/img/area.png" alt="icono habitaciones"  width="46" height="40">
+                    <p>{{ $consultaId->square }}</p>
                 </li>
             </ul>
 

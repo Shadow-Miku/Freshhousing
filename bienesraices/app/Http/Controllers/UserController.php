@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Http\Requests\ValidadorUser;
 use Illuminate\Support\Facades\Auth;
@@ -66,17 +65,27 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        DB::table('users')->where('id',$id)->update([
-            "name"=> $request->input('name'),
-            "email"=> $request->input('email'),
-            "username"=> $request->input('username'),
-            "password"=> Hash::make($request->input('password')),
-            "roll"=> $request->input('roll'),
-            "updated_at"=> Carbon::now()
-        ]);
+    $data = [
+        "name" => $request->input('name'),
+        "email" => $request->input('email'),
+        "username" => $request->input('username'),
+        "password" => Hash::make($request->input('password')),
+        "roll" => $request->input('roll'),
+        "updated_at" => Carbon::now()
+    ];
 
-        return redirect('admin.adminUsu')->with('actualizar','abc');
+    // Verificar si se ha enviado un archivo
+    if ($request->hasFile('file')) {
+        $imagen = $request->file('file')->store('public/img');
+        $url = Storage::url($imagen);
+        $data["url"] = $url;
     }
+
+    DB::table('users')->where('id', $id)->update($data);
+
+    return redirect('admin.adminUsu')->with('actualizar', 'abc');
+    }
+
 
     public function destroy($id)
     {

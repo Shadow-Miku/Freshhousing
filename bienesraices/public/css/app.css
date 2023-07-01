@@ -248,6 +248,11 @@ select,.dark-mode .formulario textarea{background-color:#333;border:1px solid #3
     font-weight:700;
     font-size:3rem
 }
+.categoria {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
 .iconos-caracteristicas {
     display:flex;list-style:none;
     padding:0;

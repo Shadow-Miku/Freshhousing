@@ -55,10 +55,10 @@
                             <p class="text-primary fst-italic" style="color: aqua">
                                 {{ $errors->first('roll') }} </p>
                             </div>
-                        <div class="mb-3">
-                            <label class="form-label">Imagen de perfil</label>
-                            <input class="form-control" type="file" name="file" accept="image/*" required>
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label">Imagen de perfil</label>
+                        <input class="form-control" type="file" name="file" accept="image/*" required>
+                    </div>
 
             </fieldset>
 

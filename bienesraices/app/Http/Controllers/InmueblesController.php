@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use DB;
 use Carbon\Carbon;
@@ -54,9 +53,11 @@ class InmueblesController extends Controller
         DB::table('publicaciones')->insert([
             "autorid"=>$request->input('autorid'),
             "titulo"=>$request->input('titulo'),
+            "categoria"=>$request->input('categoria'),
             "precio"=>$request->input('precio'),
             "url"=>$url,
             "descripcion"=>$request->input('descripcion'),
+            "square"=>$request->input('square'),
             "habitaciones"=>$request->input('habitaciones'),
             "baños"=>$request->input('baños'),
             "estacionamiento"=>$request->input('estacionamiento'),
@@ -76,24 +77,28 @@ class InmueblesController extends Controller
 
     public function update(Request $request, $id)
     {
+    $data = [
+        "autorid" => $request->input('autorid'),
+        "titulo" => $request->input('titulo'),
+        "categoria" => $request->input('categoria'),
+        "precio" => $request->input('precio'),
+        "descripcion" => $request->input('descripcion'),
+        "square" => $request->input('square'),
+        "habitaciones" => $request->input('habitaciones'),
+        "baños" => $request->input('baños'),
+        "estacionamiento" => $request->input('estacionamiento'),
+        "updated_at" => Carbon::now()
+    ];
 
-        $imagen=$request->file('file')->store('public/img');
-        $url=Storage::url($imagen);
+    // Verificar si se ha subido un archivo de imagen
+    if ($request->hasFile('file')) {
+        $imagen = $request->file('file')->store('public/img');
+        $url = Storage::url($imagen);
+        $data["url"] = $url;
+    }
 
-        DB::table('publicaciones')->where('idPub',$id)->update([
-            "autorid"=>$request->input('autorid'),
-            "titulo"=>$request->input('titulo'),
-            "precio"=>$request->input('precio'),
-            "url"=>$url,
-            "descripcion"=>$request->input('descripcion'),
-            "habitaciones"=>$request->input('habitaciones'),
-            "baños"=>$request->input('baños'),
-            "estacionamiento"=>$request->input('estacionamiento'),
-            "updated_at"=> Carbon::now()
-
-        ]);
-
-        return redirect('empleado.menu')->with('actualizar','abc');
+    DB::table('publicaciones')->where('idPub', $id)->update($data);
+    return redirect('empleado.menu')->with('actualizar', 'abc');
     }
 
 

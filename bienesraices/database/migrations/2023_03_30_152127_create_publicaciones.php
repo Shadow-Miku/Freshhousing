@@ -18,9 +18,11 @@ return new class extends Migration
             $table->id('idPub');
             $table->unsignedBigInteger('autorid');
             $table->string('titulo');
+            $table->string('categoria');
             $table->float('precio',14,2);
             $table->string('url')->nullable();
             $table->text('descripcion');
+            $table->integer('square');
             $table->integer('habitaciones');
             $table->integer('baños');
             $table->integer('estacionamiento');

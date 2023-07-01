@@ -14,11 +14,16 @@
     <div class="contenedor seccion">
         <h1 class="display-2 text-center mb-5"> Actualizar Información </h1>
         <div class="card-body">
-            <form class="formulario" method="post" action="{{route('adminUsu.update', $consultaId->id)}}">
+            <form class="formulario" method="post" action="{{route('adminUsu.update', $consultaId->id)}}" enctype="multipart/form-data">
                 @csrf
                 {!! method_field('PUT')!!}
                 <fieldset style="background-color: #24272480;">
                     <legend>Información General</legend>
+
+                        <label for="imagen">Imagen:</label>
+                        <input class="form-control" type="file" id="imagen" accept="image/*" name="file" required>
+
+                        <img  class="form-control" src="{{ $consultaId->url }}" class="imagen-small" style="max-width: 200px;">
 
                         <label class="form-label">Nombre y apellidos:</label>
                         <input type="text" class="form-control" name="name" value="{{$consultaId->name}}">
@@ -32,9 +37,10 @@
                         <input type="text" class="form-control" name="username" value="{{$consultaId->username}}">
                         <p class="text-primary fst-italic"> {{ $errors->first('username') }} </p>
 
-                        <label class="form-label">Contraseña:</label>
-                        <input type="text" class="form-control" name="password" value="{{$consultaId->password}}">
-                        <p class="text-primary fst-italic"> {{ $errors->first('password') }} </p>
+                        <label class="form-label" for="password">Contraseña:</label>
+                        <input type="password" class="form-control" name="password" value="">
+                        <p class="text-primary fst-italic">{{ $errors->first('password') }}</p>
+
 
                         <label for="text" class="form-label">Roles:</label>
                         <select class="form-select" name="roll" value="{{old('roll')}}">
