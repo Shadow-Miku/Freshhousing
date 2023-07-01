@@ -22,8 +22,10 @@ class Publicaciones extends FormRequest
         return [
             'autorid'=>'required',
             'titulo'=>'required',
+            'categoria'=>'required',
             'precio'=>'required',
             'descripcion'=>'required',
+            'square'=>'required',
             'habitaciones'=>'required',
             'baños'=>'required',
             'estacionamiento'=>'required',

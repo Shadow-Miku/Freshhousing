@@ -16,9 +16,9 @@
                 </picture>
 
                 <div class="contenido-anuncio">
-                    <h3>{{ $publicacion->titulo }}</h3>
+                    <h1>{{ $publicacion->titulo }}</h1>
                     <p>{{ $publicacion->descripcion }}</p>
-                    <p class="categoria">Renta</p>
+                    <p class="categoria">{{ $publicacion->categoria }}</p>
                     <p class="precio">${{ $publicacion->precio }}</p>
                     <ul class="iconos-caracteristicas">
                         <li>
@@ -35,7 +35,7 @@
                         </li>
                         <li>
                             <img class="icono" loading="lazy" src="/img/area.png" alt="icono habitaciones"  width="46" height="40">
-                            <p>30</p>
+                            <p>{{ $publicacion->square }}</p>
                         </li>
                     </ul>
 

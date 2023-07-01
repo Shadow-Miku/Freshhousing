@@ -19,6 +19,13 @@
             <label class="form-label" for="titulo">Titulo:</label>
             <input class="form-control"  type="text" id="titulo" name="titulo" placeholder="Titulo Propiedad" >
 
+            <label class="form-label" for="titulo">Categoria:</label>
+            <select class="form-select" name="categoria" value="{{old('categoria')}}" aria-label="Default select example">
+                <option disabled selected> Seleccione Venta o Renta...</option>
+                    <option value="Venta">VENTA</option>
+                    <option value="Renta">RENTA</option>
+            </select>
+
             <label class="form-label" for="precio">Precio:</label>
             <input class="form-control"  type="number" id="precio" name="precio" placeholder="Precio Propiedad" >
 
@@ -32,6 +39,9 @@
 
         <fieldset style="background-color: #24272480;">
             <legend>Información Propiedad</legend>
+
+            <label class="form-label" for="wc">Tamaño de la propiedad:</label>
+            <input class="form-control"  type="number" id="square" name="square" placeholder="Tamaño del terreno de la propiedad">
 
             <label class="form-label" for="habitaciones">Habitaciones:</label>
             <input
