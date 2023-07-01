@@ -121,3 +121,7 @@ Route::get('index',[InmueblesController::class,'indexsex'])->name('indexsex.inde
 Route::get('contacto/create', [contactoController::class,'create'])->name('contacto.create');
 //store
 Route::post('contacto', [contactoController::class,'store'])->name('contacto.store');
+
+Route::get('/offline', function(){
+    return view('vendor.laravelpwa.offline');
+});
