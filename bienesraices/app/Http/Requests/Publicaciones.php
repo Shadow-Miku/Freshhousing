@@ -24,6 +24,7 @@ class Publicaciones extends FormRequest
             'titulo'=>'required',
             'categoria'=>'required',
             'precio'=>'required',
+            'moneda'=>'required',
             'descripcion'=>'required',
             'square'=>'required',
             'habitaciones'=>'required',

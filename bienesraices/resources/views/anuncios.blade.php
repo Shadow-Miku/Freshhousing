@@ -1,7 +1,9 @@
 @extends('plantilla')
 <?php $inicio = false ?>
 @section('contenido')
-
+@php
+    use Illuminate\Support\Str;
+@endphp
     <main class="contenedor seccion">
 
         <h2>Casas y Depas en Venta</h2>
@@ -17,9 +19,9 @@
 
                 <div class="contenido-anuncio">
                     <h1>{{ $publicacion->titulo }}</h1>
-                    <p>{{ $publicacion->descripcion }}</p>
+                    <p>{{ Str::limit($publicacion->descripcion, $limit = 100, $end = '...') }}</p>
                     <p class="categoria">{{ $publicacion->categoria }}</p>
-                    <p class="precio">${{ $publicacion->precio }}</p>
+                    <p class="precio">${{ number_format($publicacion->precio, 2, '.', ',') }} {{$publicacion->moneda}}</p>
                     <ul class="iconos-caracteristicas">
                         <li>
                             <img class="icono" loading="lazy" src="/img/icono_wc.svg" alt="icono wc">

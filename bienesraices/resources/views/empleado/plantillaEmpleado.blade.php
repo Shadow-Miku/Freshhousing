@@ -28,9 +28,9 @@
                 <div class="derecha">
                     <img class="dark-mode-boton" src="/img/dark-mode.svg">
                     <nav class="navegacion">
-                        <a hidden href=" {{ route('nosotros') }} ">Nosotros</a>
+                        <a href=" {{ route('mensajes.index') }} ">Mensajes</a>
+                        <a href=" {{ route('publicacion.index') }} ">Publicaciones</a>
                         <a href=" {{ route('publicaciones.index') }} ">Anuncios</a>
-                        <a hidden href=" {{ route('blog') }} ">Blog</a>
                         <a href=" {{ route('login') }} ">Salir</a>
                     </nav>
                 </div>
@@ -57,9 +57,9 @@
 <footer class="footer seccion">
     <div class="contenedor contenedor-footer">
         <nav class="navegacion">
-            <a hidden href=" {{ route('nosotros') }} ">Nosotros</a>
+            <a href=" {{ route('mensajes.index') }} ">Mensajes</a>
+            <a href=" {{ route('publicacion.index') }} ">Publicaciones</a>
             <a href=" {{ route('publicaciones.index') }} ">Anuncios</a>
-            <a hidden href=" {{ route('blog') }} ">Blog</a>
             <a href=" {{ route('login') }} ">Salir</a>
         </nav>
     </div>

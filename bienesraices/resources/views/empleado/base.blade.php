@@ -14,6 +14,7 @@
 <p class="card-text lead mb-4">Estás en el panel de control de tu cuenta.
     Aquí puedes levantar publicaciones y mantenerlas actualizadas.</p>
 <a href="{{route('publicacion.index')}}" class="btn btn-primary px-5 py-3 rounded-pill">Levantar publicaciones</a>
+<a href="{{route('mensajes.index')}}" class="btn btn-primary px-5 py-3 rounded-pill">Mensajes</a>
 </div>
 </div>
 </div>
