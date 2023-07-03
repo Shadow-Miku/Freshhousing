@@ -18,7 +18,10 @@ use App\Http\Controllers\contactoController;
 |
 */
 
-Route::get('/', [controladorvistas::class,'showIndex'])->name('index');
+//index
+Route::get('/',[InmueblesController::class,'indexhome'])->name('index');
+
+//Route::get('/', [controladorvistas::class,'showIndex'])->name('index');
 
 Route::get('entrada', [controladorvistas::class,'showEntrada'])->name('entrada');
 
@@ -80,7 +83,7 @@ Route::delete('admin.adminUsu/{id}',[UserController::class,'destroy'])->name('ad
 
 /*
 |--------------------------------------------------------------------------
-| CRUD Publicaciones empleados
+| CRUD Publicaciones empleados y mensajes
 |--------------------------------------------------------------------------
 */
 
@@ -106,7 +109,15 @@ Route::get('empleado.menu/{id}/show',[InmueblesController::class,'show'])->name(
 Route::delete('empleado.menu/{id}',[InmueblesController::class,'destroy'])->name('publicacion.destroy');
 
 
-//Anuncios
+//Mensajes
+Route::get('empleado.mensajes',[contactoController::class,'index'])->name('mensajes.index');
+
+
+/*
+|--------------------------------------------------------------------------
+| Vistas de los clientes
+|--------------------------------------------------------------------------
+*/
 
 //index
 Route::get('anuncios',[InmueblesController::class,'indexanuncios'])->name('publicaciones.index');

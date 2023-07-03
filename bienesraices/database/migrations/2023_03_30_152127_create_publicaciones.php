@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('autorid');
             $table->string('titulo');
             $table->string('categoria');
+            $table->string('moneda');
             $table->float('precio',14,2);
             $table->string('url')->nullable();
             $table->text('descripcion');

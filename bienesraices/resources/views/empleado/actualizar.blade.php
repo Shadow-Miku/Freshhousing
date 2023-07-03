@@ -23,12 +23,22 @@
             <label class="form-label" for="titulo">Categoría:</label>
             <select class="form-select" name="categoria" aria-label="Default select example">
                 <option disabled selected>Seleccione Venta o Renta...</option>
-                <option value="VENTA" @if($consultaId->categoria == 'VENTA') selected @endif>Venta</option>
-                <option value="RENTA" @if($consultaId->categoria == 'RENTA') selected @endif>Renta</option>
+                <option value="Venta" @if($consultaId->categoria == 'Venta') selected @endif>Venta</option>
+                <option value="Renta" @if($consultaId->categoria == 'Renta') selected @endif>Renta</option>
             </select>
 
             <label for="precio">Precio:</label>
             <input class="form-control" type="number" id="precio" name="precio" placeholder="Precio Propiedad" value="{{$consultaId->precio}}">
+
+            <label class="form-label" for="titulo">Moneda:</label>
+            <select class="form-select" name="moneda" aria-label="Default select example">
+                <option disabled selected>Seleccione el tipo de divisa...</option>
+                <option value="MX" {{ $consultaId->moneda == 'MX' ? 'selected' : '' }}>Peso Mexicano</option>
+                <option value="RUB" {{ $consultaId->moneda == 'RUB' ? 'selected' : '' }}>Rublo Ruso</option>
+                <option value="USD" {{ $consultaId->moneda == 'USD' ? 'selected' : '' }}>Dolar Estadounidense</option>
+                <option value="JPY" {{ $consultaId->moneda == 'JPY' ? 'selected' : '' }}>Yen Japones</option>
+                <option value="EUR" {{ $consultaId->moneda == 'EUR' ? 'selected' : '' }}>Euro</option>
+            </select>
 
             <label for="imagen">Imagen:</label>
             <input class="form-control" type="file" id="imagen" accept="image/*" name="file" >

@@ -1,7 +1,9 @@
 @extends('plantilla')
 <?php $inicio = true ?>
 @section('contenido')
-
+@php
+    use Illuminate\Support\Str;
+@endphp
 
     <main class="contenedor seccion">
         <h1>Más Sobre Nosotros</h1>
@@ -35,98 +37,45 @@
         <h2>Ejemplos de casas y departamentos</h2>
 
         <div class="contenedor-anuncios">
-            <div class="anuncio">
-                <picture>
-                    <source srcset="/img/anuncio1.webp" type="image/webp">
-                    <source srcset="/img/anuncio1.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/img/anuncio1.jpg" alt="anuncio">
-                </picture>
+            @foreach ($publicaciones as $publicacion)
+                <div class="anuncio">
+                    <picture class="imagen">
+                        <source srcset="{{ $publicacion->url }}">
+                        <source srcset="/img/anuncio1.jpg" type="image/jpeg">
+                        <img loading="lazy" src="/img/anuncio1.jpg" alt="anuncio">
+                    </picture>
 
-                <div class="contenido-anuncio">
-                    <h3>Casa de Lujo en el Lago</h3>
-                    <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
-                    <p class="precio">$3,0000,000</p>
+                    <div class="contenido-anuncio">
+                        <h1>{{ $publicacion->titulo }}</h1>
+                        <p>{{ Str::limit($publicacion->descripcion, $limit = 100, $end = '...') }}</p>
+                        <p class="categoria">{{ $publicacion->categoria }}</p>
+                        <p class="precio">${{ number_format($publicacion->precio, 2, '.', ',') }} {{$publicacion->moneda}}</p>
+                        <ul class="iconos-caracteristicas">
+                            <li>
+                                <img class="icono" loading="lazy" src="/img/icono_wc.svg" alt="icono wc">
+                                <p>{{ $publicacion->baños }}</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                                <p>{{ $publicacion->estacionamiento }}</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="/img/icono_dormitorio.svg" alt="icono habitaciones">
+                                <p>{{ $publicacion->habitaciones }}</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="/img/area.png" alt="icono habitaciones"  width="46" height="40">
+                                <p>{{ $publicacion->square }}</p>
+                            </li>
+                        </ul>
 
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="/img/anuncio2.webp" type="image/webp">
-                    <source srcset="/img/anuncio2.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/img/anuncio2.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>Casa terminados de lujo</h3>
-                    <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
-                    <p class="precio">$3,0000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-            <div class="anuncio">
-                <picture>
-                    <source srcset="/img/anuncio3.webp" type="image/webp">
-                    <source srcset="/img/anuncio3.jpg" type="image/jpeg">
-                    <img loading="lazy" src="/img/anuncio3.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido-anuncio">
-                    <h3>Casa con alberca</h3>
-                    <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
-                    <p class="precio">$3,0000,000</p>
-
-                    <ul class="iconos-caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-                        <li>
-                            <img class="icono" loading="lazy" src="/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>4</p>
-                        </li>
-                    </ul>
-
-
-                </div><!--.contenido-anuncio-->
-            </div><!--anuncio-->
-
-        </div> <!--.contenedor-anuncios-->
+                        <a class="boton-amarillo-block" onclick="location.href='{{ route('publi.show', $publicacion->idPub) }}'">
+                            Ver Propiedad
+                        </a>
+                    </div><!--.contenido-anuncio-->
+                </div><!--anuncio-->
+                @endforeach
+            </div> <!--.contenedor-anuncios-->
 
         <div class="alinear-derecha">
             <a href=" {{ route('publicaciones.index') }} " class="btn btn-success">Ver Todas</a>

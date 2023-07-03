@@ -13,7 +13,7 @@
 
         <div class="resumen-propiedad">
             <p class="categoria">{{ $consultaId->categoria }}</p>
-            <p class="precio">${{ $consultaId->precio }}</p>
+            <p class="precio">${{ number_format($consultaId->precio, 2, '.', ',') }}</p>
             <ul class="iconos-caracteristicas">
                 <li>
                     <img class="icono" loading="lazy" src="/img/icono_wc.svg" alt="icono wc">
@@ -35,7 +35,7 @@
 
             <p>{{ $consultaId->descripcion }}</p>
             <div class="d-flex justify-content-between">
-                <a href="{{ route('publicaciones.index') }}" class="btn btn-success">Volver</a>
+                <a href="{{ url()->previous() }}" class="btn btn-success">Volver</a>
                 <a href="{{ route('contacto.create') }}" class="btn btn-info ml-auto">Me interesa</a>
             </div>
         </div>

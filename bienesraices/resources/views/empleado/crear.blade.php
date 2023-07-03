@@ -22,12 +22,22 @@
             <label class="form-label" for="titulo">Categoria:</label>
             <select class="form-select" name="categoria" value="{{old('categoria')}}" aria-label="Default select example">
                 <option disabled selected> Seleccione Venta o Renta...</option>
-                    <option value="Venta">VENTA</option>
-                    <option value="Renta">RENTA</option>
+                    <option value="Venta">Venta</option>
+                    <option value="Renta">Renta</option>
             </select>
 
             <label class="form-label" for="precio">Precio:</label>
             <input class="form-control"  type="number" id="precio" name="precio" placeholder="Precio Propiedad" >
+
+            <label class="form-label" for="titulo">Moneda:</label>
+            <select class="form-select" name="moneda" value="{{old('moneda')}}" aria-label="Default select example">
+                <option disabled selected> Seleccione el tipo de divisa...</option>
+                    <option value="MX">Peso Mexicano</option>
+                    <option value="RUB">Rublo Ruso</option>
+                    <option value="USD">Dolar Estadounidense</option>
+                    <option value="JPY">Yen Japones</option>
+                    <option value="EUR">Euro</option>
+            </select>
 
             <label class="form-label" for="imagen">Imagen:</label>
             <input class="form-control"  type="file" id="imagen" accept="image/*" name="file" required>
