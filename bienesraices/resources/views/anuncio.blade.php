@@ -35,7 +35,7 @@
 
             <p>{{ $consultaId->descripcion }}</p>
             <div class="d-flex justify-content-between">
-                <a href="{{ route('publicaciones.index') }}" class="btn btn-success">Volver</a>
+                <a href="{{ url()->previous() }}" class="btn btn-success">Volver</a>
                 <a href="{{ route('contacto.create') }}" class="btn btn-info ml-auto">Me interesa</a>
             </div>
         </div>

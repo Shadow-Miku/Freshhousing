@@ -60,7 +60,7 @@
                 <td>{{$consulta->idPub}}</td>
                 <td>{{$consulta->titulo}}</td>
                 <td><img src="{{ $consulta->url }}"  alt="Foto de la propiedad" class="imagen-small"></td>
-                <td>{{$consulta->precio}}</td>
+                <td>${{ number_format($consulta->precio, 2, '.', ',') }} {{$consulta->moneda}}</td>
 
                 <td>
                     <button class="btn btn-warning" onclick="location.href='{{ route('publicacion.edit', $consulta->idPub) }}'">

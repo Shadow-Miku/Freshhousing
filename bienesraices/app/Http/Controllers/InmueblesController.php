@@ -32,6 +32,17 @@ class InmueblesController extends Controller
         return view('empleado.menu', compact('consultaPub', 'filtrar'));
     }
 
+    /* Mostrar los anuncios de las publicaciones */
+    public function indexhome(Request $request)
+    {
+        $publicaciones = DB::table('publicaciones')
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
+
+        return view('index', compact('publicaciones'));
+    }
+
     public function indexanuncios(Request $request)
     {
         $publicaciones = DB::table('publicaciones')

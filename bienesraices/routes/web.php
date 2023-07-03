@@ -18,7 +18,10 @@ use App\Http\Controllers\contactoController;
 |
 */
 
-Route::get('/', [controladorvistas::class,'showIndex'])->name('index');
+//index
+Route::get('/',[InmueblesController::class,'indexhome'])->name('index');
+
+//Route::get('/', [controladorvistas::class,'showIndex'])->name('index');
 
 Route::get('entrada', [controladorvistas::class,'showEntrada'])->name('entrada');
 

@@ -21,6 +21,6 @@
             <p>Aliquam lectus magna, luctus vel gravida nec, iaculis ut augue. Praesent ac enim lorem. Quisque ac dignissim sem, non condimentum orci. Morbi a iaculis neque, ac euismod felis. Fusce augue quam, fermentum sed turpis nec, hendrerit dapibus ante. Cras mattis laoreet nibh, quis tincidunt odio fermentum vel. Nulla facilisi.</p>
         </div>
         <br>
-        <a href="blog" class="btn btn-success">Volver</a>
+        <a href="{{ url()->previous() }}" class="btn btn-success">Volver</a>
     </main>
 @stop
