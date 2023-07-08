@@ -13,7 +13,7 @@
 
         <div class="resumen-propiedad">
             <p class="categoria">{{ $consultaId->categoria }}</p>
-            <p class="precio">${{ number_format($consultaId->precio, 2, '.', ',') }}</p>
+            <p class="precio">${{ number_format($consultaId->precio, 2, '.', ',') }} {{$consultaId->moneda}}</p>
             <ul class="iconos-caracteristicas">
                 <li>
                     <img class="icono" loading="lazy" src="/img/icono_wc.svg" alt="icono wc">
