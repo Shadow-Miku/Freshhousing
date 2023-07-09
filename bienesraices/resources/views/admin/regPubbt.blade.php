@@ -10,21 +10,27 @@
     <fieldset style="background-color: #24272480;">
         <legend>Información de la Publicacion</legend>
 
-        <label class="form-label" for="titulop">Titulo:</label>
-        <input class="form-control"  type="text" id="titulop" name="titulop" placeholder="Titulo Del Trabajo" >
+        <div class="mb-3" >
+            <label class="form-label">Nombre:</label>
+            <input type="text" class="form-control" name="autorid" value="{{ $user = auth()->user()->id }}">
+            <p class="text-primary fst-italic"> {{ $errors->first('autorid') }} </p>
+        </div>
 
-        <label for="categoria1">Categoría:</label>
-        <select name="categoria1" id="categoria1" required>
+        <label class="form-label" for="titulo">Titulo:</label>
+        <input class="form-control"  type="text" id="titulop" name="titulo" placeholder="Titulo Del Trabajo" >
+
+        <label for="categoriaid">Categoría:</label>
+        <select name="categoriaid" id="categoriaid" required>
         @foreach ($Categorias as $categoria)
             <option value="{{ $categoria->idcategoria }}">{{ $categoria->nombre_categoria }}</option>
         @endforeach
         </select>
 
-        <label class="form-label" for="file1">Imagen:</label>
-        <input class="form-control"  type="file" id="file1" accept="image/*" name="file1" required>
+        <label class="form-label" for="imagen">Imagen:</label>
+        <input class="form-control"  type="file" id="imagen" accept="image/*" name="file" required>
 
-        <label class="form-label" for="descripcion1">Descripción:</label>
-        <textarea class="form-control"  id="descripcion1" name="descripcion1"></textarea>
+        <label class="form-label" for="descripcion">Descripción:</label>
+        <textarea class="form-control"  id="descripcion" name="descripcion"></textarea>
 
     </fieldset>
     <br>
