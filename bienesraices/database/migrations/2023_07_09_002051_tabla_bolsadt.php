@@ -19,7 +19,6 @@ return new class extends Migration
             $table->unsignedBigInteger('autorid');
             $table->unsignedBigInteger('categoriaid');
             $table->string('titulo');
-            $table->string('categoria_nombre');
             $table->string('url')->nullable();
             $table->text('descripcion');
             $table->foreign('autorid')->references('id')->on('users')->onDelete('cascade');

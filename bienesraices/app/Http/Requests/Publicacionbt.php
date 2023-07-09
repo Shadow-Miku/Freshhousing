@@ -13,7 +13,7 @@ class regbolsadt extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class regbolsadt extends FormRequest
     public function rules()
     {
         return [
-            //
+            'titulop'=>'required',
+            'categoria1'=>'required',
+            'descripcion1'=>'required'
         ];
     }
 }

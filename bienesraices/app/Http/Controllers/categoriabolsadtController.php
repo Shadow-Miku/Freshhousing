@@ -38,7 +38,7 @@ class categoriabolsadtController extends Controller
     public function store(categorias $request)
     {
         DB::table('categorias_bolsadt')->insert([
-            "nombrecat"=>$request->input('nombre_categoria')
+            "nombre_categoria"=>$request->input('nombrecat')
         ]);
 
         return redirect('admin.adminbolsadet')->with('confirmacion2','abc');

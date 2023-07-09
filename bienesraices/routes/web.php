@@ -149,10 +149,11 @@ Route::get('/offline', function(){
 Route::get('admin.adminbolsadet',[BolsadtController::class,'index'])->name('adminbolsadet.index');
 
 //Create
-Route::get('admin.adminbolsadet/create', [BolsadtController::class,'create'])->name('adminbolsadet.create');
+Route::get('admin.adminbolsadet/createreg', [BolsadtController::class,'createreg'])->name('adminbolsadet.createreg');
 
 //store
-Route::post('admin.adminbolsadet', [BolsadtController::class,'store'])->name('adminbolsadet.store');
+Route::post('admin.adminbolsadet/createreg', [BolsadtController::class, 'storereg'])->name('adminbolsadet.storereg');
+
 
 //Edit
 Route::get('admin.adminbolsadet/{id}/edit',[BolsadtController::class,'edit'])->name('adminbolsadet.edit');
