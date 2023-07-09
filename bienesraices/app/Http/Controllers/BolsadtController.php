@@ -33,9 +33,9 @@ class BolsadtController extends Controller
             })
             ->select('bolsadt.*', 'users.name as autor_name', 'categorias_bolsadt.nombre_categoria as categoria_nombre')
             ->get();
-        
+
         return view('admin.adminbolsadet', compact('consultaPubbt', 'filtrar'));
-        
+
     }
 
     /**
@@ -46,50 +46,27 @@ class BolsadtController extends Controller
     public function createreg()
     {
         $Categorias = categorias_bolsadt::all();
-        
+
         return view('admin.regPubbt', compact('Categorias'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function storereg(Request $request)
-    
-    {
-        $request->validate([
-        'titulop' => 'required',
-        'categoria1' => 'required',
-        'file1' => 'required|image',
-        'descripcion1' => 'required',
-    ]);
+    public function storereg(Request $request){
 
-    $imagen = $request->file('file1')->store('public/img');
-    $url = Storage::url($imagen);
+    $imagen=$request->file('file')->store('public/img');
+        $url=Storage::url($imagen);
 
-    $user = User::find(auth()->user()->id);
-    if (!$user) {
-        return redirect()->back()->with('error', 'Usuario no encontrado');
-    }
-
-    $categoria = categorias_bolsadt::find($request->input('categoria1'));
-    if (!$categoria) {
-        return redirect()->back()->with('error', 'Categoría no encontrada');
-    }
-
-    $bolsadt = new Bolsadt();
-    $bolsadt->titulo = $request->input('titulop');
-    $bolsadt->categoriaid = $request->input('categoria1');
-    $bolsadt->url = $url;
-    $bolsadt->descripcion = $request->input('descripcion1');
-
-    $user->bolsadt()->save($bolsadt);
-
+        DB::table('bolsadt')->insert([
+            "autorid"=>$request->input('autorid'),
+            "titulo"=>$request->input('titulo'),
+            "categoriaid"=>$request->input('categoriaid'),
+            "url"=>$url,
+            "descripcion"=>$request->input('descripcion'),
+            "created_at"=>Carbon::now(),
+            "updated_at"=>Carbon::now()
+        ]);
     return redirect('admin.adminbolsadet')->with('confirmacion3', 'abc');
     }
-    
+
 
     /**
      * Display the specified resource.
