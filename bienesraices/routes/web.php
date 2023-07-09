@@ -6,6 +6,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InmueblesController;
 use App\Http\Controllers\contactoController;
+use App\Http\Controllers\BolsadtController;
+use App\Http\Controllers\categoriabolsadtController;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,3 +138,41 @@ Route::post('contacto', [contactoController::class,'store'])->name('contacto.sto
 Route::get('/offline', function(){
     return view('vendor.laravelpwa.offline');
 });
+
+/*
+|--------------------------------------------------------------------------
+| CRUD Publicacionesbolsadt Admin y empleados 
+|--------------------------------------------------------------------------
+*/
+
+//index
+Route::get('admin.adminbolsadet',[BolsadtController::class,'index'])->name('adminbolsadet.index');
+
+//Create
+Route::get('admin.adminbolsadet/create', [BolsadtController::class,'create'])->name('adminbolsadet.create');
+
+//store
+Route::post('admin.adminbolsadet', [BolsadtController::class,'store'])->name('adminbolsadet.store');
+
+//Edit
+Route::get('admin.adminbolsadet/{id}/edit',[BolsadtController::class,'edit'])->name('adminbolsadet.edit');
+
+//Update
+Route::put('admin.adminbolsadet/{id}',[BolsadtController::class,'update'])->name('adminbolsadet.update');
+
+//show
+Route::get('admin.adminbolsadet/{id}/show',[BolsadtController::class,'show'])->name('adminbolsadet.show');
+
+//destroy
+Route::delete('admin.adminbolsadet/{id}',[BolsadtController::class,'destroy'])->name('adminbolsadet.destroy');
+
+/*
+|--------------------------------------------------------------------------
+| Crear categoria
+|--------------------------------------------------------------------------
+*/
+
+//store
+Route::post('admin.adminbolsadet', [categoriabolsadtController::class,'store'])->name('categoria.store');
+//Create
+Route::get('admin.adminbolsadet/create', [categoriabolsadtController::class,'create'])->name('categoria.create');

@@ -13,6 +13,7 @@
 <div class="card-body bg-secondary">
 <p class="card-text lead mb-4">Desde aquí podrás gestionar y controlar a los usuarios de la plataforma. Podrás agregar, editar y eliminar usuarios según sea necesario.</p>
 <a href="{{route('adminUsu.index')}}" class="btn btn-primary px-5 py-3 rounded-pill">Gestionar Usuarios</a>
+<a href="{{route('adminbolsadet.index')}}" class="btn btn-primary px-5 py-3 rounded-pill">Agregar Publicacion Bolsa de trabajo</a>
 </div>
 </div>
 </div>
