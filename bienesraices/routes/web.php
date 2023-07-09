@@ -152,7 +152,8 @@ Route::get('admin.adminbolsadet',[BolsadtController::class,'index'])->name('admi
 Route::get('admin.adminbolsadet/createreg', [BolsadtController::class,'createreg'])->name('adminbolsadet.createreg');
 
 //store
-Route::post('admin.adminbolsadet', [BolsadtController::class,'storereg'])->name('adminbolsadet.storereg');
+Route::post('admin.adminbolsadet/createreg', [BolsadtController::class, 'storereg'])->name('adminbolsadet.storereg');
+
 
 //Edit
 Route::get('admin.adminbolsadet/{id}/edit',[BolsadtController::class,'edit'])->name('adminbolsadet.edit');

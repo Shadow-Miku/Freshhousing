@@ -7,6 +7,8 @@ use DB;
 use Carbon\Carbon;
 use App\Http\Requests\Publicacionesbt;
 use App\Models\categorias_bolsadt;
+use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
 
 class BolsadtController extends Controller
@@ -54,35 +56,38 @@ class BolsadtController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storereg(Publicacionbt $request)
+    public function storereg(Request $request)
     
     {
+        $request->validate([
+        'titulop' => 'required',
+        'categoria1' => 'required',
+        'file1' => 'required|image',
+        'descripcion1' => 'required',
+    ]);
 
-        $imagen = $request->file('file')->store('public/img');
-        $url = Storage::url($imagen);
+    $imagen = $request->file('file1')->store('public/img');
+    $url = Storage::url($imagen);
 
-        $user = User::find(auth()->user()->id);
+    $user = User::find(auth()->user()->id);
+    if (!$user) {
+        return redirect()->back()->with('error', 'Usuario no encontrado');
+    }
 
-        if (!$user) {
-            return redirect()->back()->with('error', 'Usuario no encontrado');
-        }
+    $categoria = categorias_bolsadt::find($request->input('categoria1'));
+    if (!$categoria) {
+        return redirect()->back()->with('error', 'Categoría no encontrada');
+    }
 
-        $categoria = CategoriaBolsadt::find($request->input('categoriaid'));
+    $bolsadt = new Bolsadt();
+    $bolsadt->titulo = $request->input('titulop');
+    $bolsadt->categoriaid = $request->input('categoria1');
+    $bolsadt->url = $url;
+    $bolsadt->descripcion = $request->input('descripcion1');
 
-        if (!$categoria) {
-            return redirect()->back()->with('error', 'Categoría no encontrada');
-        }
+    $user->bolsadt()->save($bolsadt);
 
-        $bolsadt = new Bolsadt();
-        $bolsadt->titulo = $request->input('titulo');
-        $bolsadt->categoriaid = $request->input('categoriaid');
-        $bolsadt->categoria_nombre = $categoria->nombre_categoria;
-        $bolsadt->url = $url;
-        $bolsadt->descripcion = $request->input('descripcion');
-
-        $user->bolsadt()->save($bolsadt);
-
-        return redirect('admin.adminbolsadet')->with('confirmacion3', 'abc');
+    return redirect('admin.adminbolsadet')->with('confirmacion3', 'abc');
     }
     
 

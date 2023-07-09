@@ -79,8 +79,9 @@
             <tr>
                 <td>{{$consulta->idtrab}}</td>
                 <td>{{$consulta->titulo}}</td>
-                <td><img src=""  alt="Foto de la propiedad" class="imagen-small"></td>
-
+                <td><img src="{{$consulta->url}}"  alt="Foto de la propiedad" class="imagen-small"></td>
+                <td>{{$consulta->categoria_nombre}}</td>
+                <td>{{$consulta->descripcion}}</td>
                 <td>
                     <button class="btn btn-warning" onclick="location.href=''">
                         <i class="bi bi-arrow-clockwise"></i> Actualizar datos de la publicacion
