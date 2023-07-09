@@ -2,6 +2,15 @@
 <?php $inicio = false ?>
 @section('contenido')
 
+@if (session()->has('confirmacion2'))
+        {!!" <script> Swal.fire(
+            'Muy bien!',
+            'Usuario registrado',
+            'success'
+          ) </script>"!!}
+    @endif
+
+
 <main class="contenedor seccion">
     <h1>Crear Categoria</h1>
     <div class="card-body">
@@ -11,7 +20,7 @@
             <legend>Información de la categoria</legend>
 
             <label class="form-label" for="titulo">Categoria del trabajo:</label>
-            <input class="form-control"  type="text" id="nombrecat" name="titulo" placeholder="Tipo de trabajo" >
+            <input class="form-control"  type="text" id="nombrecat" name="nombrecat" placeholder="Tipo de trabajo" >
 
         </fieldset>
         <br>
