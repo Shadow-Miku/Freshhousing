@@ -41,6 +41,21 @@
     ) </script>"!!}
 @endif 
 
+@if (session()->has('confirmacion5'))
+    {!!" <script> Swal.fire(
+        'Exito',
+        'Publicación actualizada',
+        'success'
+    ) </script>"!!}
+@endif 
+
+@if (session()->has('elimina'))
+    {!!" <script> Swal.fire(
+        'Completado',
+        'Publicación eliminada',
+        'success'
+    ) </script>"!!}
+@endif
       <main class="contenedor seccion">
         <h1>Administrador de Publicaciones de trabajos</h1>
 
@@ -83,10 +98,10 @@
                 <td>{{$consulta->categoria_nombre}}</td>
                 <td>{{$consulta->descripcion}}</td>
                 <td>
-                    <button class="btn btn-warning" onclick="location.href=''">
+                <button class="btn btn-warning" onclick="location.href='{{ route('adminbolsadet.edit', $consulta->idtrab) }}'">
                         <i class="bi bi-arrow-clockwise"></i> Actualizar datos de la publicacion
                     </button>
-                    <button class="btn btn-danger" onclick="location.href=''">
+                    <button class="btn btn-danger" onclick="location.href='{{route('adminbolsadet.show', $consulta->idtrab)}}'">
                         <i class="bi bi-trash2"></i> Dar de baja la publicacion
                     </button>
                 </td>
