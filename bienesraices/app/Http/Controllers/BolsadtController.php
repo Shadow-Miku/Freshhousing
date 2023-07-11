@@ -76,7 +76,8 @@ class BolsadtController extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaId= DB::table('bolsadt')->where('idtrab',$id)->first();
+        return view('admin.borrarpubbt', compact('consultaId'));
     }
 
     /**
@@ -87,7 +88,11 @@ class BolsadtController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bolsadt = DB::table('bolsadt')->where('idtrab', $id)->first();
+        $Categorias = categorias_bolsadt::all();
+
+
+        return view('admin.actpubbt', compact('Categorias', 'bolsadt'));
     }
 
     /**
@@ -99,8 +104,29 @@ class BolsadtController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+            "autorid" => $request->input('autorid'),
+            "titulo" => $request->input('titulo'),
+            "categoriaid" => $request->input('categoriaid'),
+            "descripcion" => $request->input('descripcion'),
+            "updated_at" => Carbon::now()
+        ];
+    
+        
+    // Verificar si se ha subido un archivo de imagen
+    if ($request->hasFile('file')) {
+        $imagen = $request->file('file')->store('public/img');
+        $url = Storage::url($imagen);
+        $data["url"] = $url;
     }
+
+        DB::table('bolsadt')->where('idtrab', $id)->update($data);
+
+        
+    
+        return redirect('admin.adminbolsadet')->with('confirmacion5', 'abc');
+    }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -110,6 +136,8 @@ class BolsadtController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('bolsadt')->where('idtrab',$id)->delete();
+
+        return redirect('admin.adminbolsadet')->with('elimina','abc');
     }
 }
