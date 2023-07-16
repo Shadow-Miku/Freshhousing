@@ -8,6 +8,7 @@ use App\Http\Controllers\InmueblesController;
 use App\Http\Controllers\contactoController;
 use App\Http\Controllers\BolsadtController;
 use App\Http\Controllers\categoriabolsadtController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,8 @@ use App\Http\Controllers\categoriabolsadtController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
-//index
-Route::get('/',[InmueblesController::class,'indexhome'])->name('index');
 
 //Route::get('/', [controladorvistas::class,'showIndex'])->name('index');
 
@@ -147,6 +147,12 @@ Route::get('/offline', function(){
 
 //index
 Route::get('admin.adminbolsadet',[BolsadtController::class,'index'])->name('adminbolsadet.index');
+
+//indexpaginablog
+Route::get('blog',[BolsadtController::class,'indexpub'])->name('blog.indexpub');
+
+//indexhomeblog
+Route::get('index',[BolsadtController::class,'indexhomeblog'])->name('index');
 
 //Create
 Route::get('admin.adminbolsadet/createreg', [BolsadtController::class,'createreg'])->name('adminbolsadet.createreg');
