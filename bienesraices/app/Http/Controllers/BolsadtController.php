@@ -38,6 +38,23 @@ class BolsadtController extends Controller
 
     }
 
+    public function indexpub(Request $request)
+    {
+        $publicacionesbt = DB::table('bolsadt')
+        ->get();
+
+        return view('blog', compact('publicacionesbt'));
+        
+    }
+    public function indexhomeblog(Request $request)
+    {
+        $publicacionesbolsadt = DB::table('bolsadt')
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
+
+        return view('index', compact('publicacionesbolsadt'));
+    }
     /**
      * Show the form for creating a new resource.
      *
