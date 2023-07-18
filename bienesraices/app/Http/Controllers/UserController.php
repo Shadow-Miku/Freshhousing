@@ -63,6 +63,12 @@ class UserController extends Controller
         return view('admin.actUsu', compact('consultaId'));
     }
 
+    public function editempleado($id)
+    {
+        $user = auth()->user()->id;
+        return view('empleado.Actperfilempleado', ['user' => $user]);
+    }
+    
     public function update(Request $request, $id)
     {
     $data = [
@@ -92,5 +98,49 @@ class UserController extends Controller
         DB::table('users')->where('id',$id)->delete();
 
         return redirect('admin.adminUsu')->with('elimina','abc');
+    }
+
+    public function updateempleado(Request $request, $id)
+    {
+    if ($request->hasFile('fileempleado')) {
+        $imagen = $request->file('fileempleado')->store('public/img');
+        $url = Storage::url($imagen);
+    } else {
+        $url = $user = auth()->user()->url;
+    }
+
+    DB::table('users')->where('id', $id)->update([
+        "name" => $request->input('name'),
+        "username" => $request->input('username'),
+        "url" => $url,
+        "updated_at" => Carbon::now()
+    ]);
+    
+    return view('empleado.base')->with('actualizar10','abc');
+    }
+
+    public function editadmin($id)
+    {
+        $user = auth()->user()->id;
+        return view('admin.Actperfiladmin', ['user' => $user]);
+    }
+
+    public function updateadmin(Request $request, $id)
+    {
+    if ($request->hasFile('fileadmin')) {
+        $imagen = $request->file('fileadmin')->store('public/img');
+        $url = Storage::url($imagen);
+    } else {
+        $url = $user = auth()->user()->url;
+    }
+
+    DB::table('users')->where('id', $id)->update([
+        "name" => $request->input('name'),
+        "username" => $request->input('username'),
+        "url" => $url,
+        "updated_at" => Carbon::now()
+    ]);
+    
+    return view('admin.base')->with('actualizar10','abc');
     }
 }
