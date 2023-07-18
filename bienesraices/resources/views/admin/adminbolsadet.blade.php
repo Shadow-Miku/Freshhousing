@@ -1,4 +1,4 @@
-@extends('empleado.plantillaEmpleado')
+@extends('admin.plantillaAdmin')
 <?php $inicio = false ?>
 @section('contenido')
 

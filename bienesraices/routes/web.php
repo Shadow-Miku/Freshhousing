@@ -73,8 +73,20 @@ Route::post('admin.adminUsu', [UserController::class,'store'])->name('adminUsu.s
 //Edit
 Route::get('admin.adminUsu/{id}/edit',[UserController::class,'edit'])->name('adminUsu.edit');
 
+//Editempleado
+Route::get('empleado.Actperfilempleado/{id}/edit',[UserController::class,'editempleado'])->name('base.editemp');
+
 //Update
 Route::put('admin.adminUsu/{id}',[UserController::class,'update'])->name('adminUsu.update');
+
+//Updateempleado
+Route::put('empleado.Actperfilempleado/{id}',[UserController::class,'updateempleado'])->name('base.updateempleado');
+
+//Editadmin
+Route::get('admin.Actperfiladmin/{id}/edit',[UserController::class,'editadmin'])->name('base.editadm');
+
+//Updateadmin
+Route::put('admin.Actperfiladmin/{id}',[UserController::class,'updateadmin'])->name('base.updateadmin');
 
 //show
 Route::get('admin.adminUsu/{id}/show',[UserController::class,'show'])->name('adminUsu.show');
