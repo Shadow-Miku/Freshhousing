@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a href=" {{ route('entrada') }} ">
+                    <a onclick="', $publicacion->idtrab) }}'">
                         <h4>{{ $publicacionbt->titulo }}</h4>
                         <p class="informacion-meta">Escrito el: <span>{{ $publicacionbt->created_at }}</span> por: <span>{{ $publicacionbt->autorid }}</span> </p>
 
