@@ -195,3 +195,11 @@ Route::delete('admin.adminbolsadet/{id}',[BolsadtController::class,'destroy'])->
 Route::post('admin.adminbolsadet', [categoriabolsadtController::class,'store'])->name('categoria.store');
 //Create
 Route::get('admin.adminbolsadet/create', [categoriabolsadtController::class,'create'])->name('categoria.create');
+
+/*
+|--------------------------------------------------------------------------
+| Blog
+|--------------------------------------------------------------------------
+*/
+//show
+Route::get('entrada/{id}/paginaPublicacionbdt',[BolsadtController::class,'paginaPublicacionbdt'])->name('publibdt.show');

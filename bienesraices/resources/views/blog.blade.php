@@ -15,9 +15,9 @@
             </div>
 
             <div class="texto-entrada">
-                <a href="  ">
+                <a onclick="location.href='{{ route('publibdt.show', $publicacion->idtrab) }}'">
                     <h4>{{ $publicacion->titulo }}</h4>
-                    <p>Escrito el: {{ $publicacion->created_at }} <span>titulo</span> por: <span>{{ $publicacion->autorid }}</span> </p>
+                    <p>Escrito el: {{ $publicacion->created_at }} por: <span>{{ $publicacion->autorid }}</span> </p>
 
                     <p>
                     {{ $publicacion->descripcion }}

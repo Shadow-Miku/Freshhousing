@@ -29,7 +29,7 @@
                     <nav class="navegacion">
                         <a href=" {{ route('nosotros') }} ">Nosotros</a>
                         <a href=" {{ route('publicaciones.index') }} ">Anuncios</a>
-                        <a href=" {{ route('blog.indexpub') }} ">Blog</a>
+                        <a href=" {{ route('blog.indexpub') }} ">Bolsa de trabajo</a>
                         <a href=" {{ route('contacto.create') }} ">Contacto</a>
                     </nav>
                 </div>
