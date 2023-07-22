@@ -17,6 +17,8 @@ class HomeController extends Controller
             ->get();
 
         $publicacionesbolsa = DB::table('bolsadt')
+            ->join('users', 'bolsadt.autorid', '=', 'users.id')
+            ->select('bolsadt.*', 'users.username as autor_username')
             ->inRandomOrder()
             ->limit(3)
             ->get();

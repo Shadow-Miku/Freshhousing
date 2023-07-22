@@ -3,7 +3,7 @@
 @section('contenido')
 
     <main class="contenedor seccion contenido-centrado">
-        <h1>Nuestro Blog</h1>
+        <h1>Bolsa de trabajo</h1>
         @foreach ($publicacionesbt as $publicacion)
         <article class="entrada-blog">
             <div class="imagen">
@@ -17,8 +17,7 @@
             <div class="texto-entrada">
                 <a onclick="location.href='{{ route('publibdt.show', $publicacion->idtrab) }}'">
                     <h4>{{ $publicacion->titulo }}</h4>
-                    <p>Escrito el: {{ $publicacion->created_at }} por: <span>{{ $publicacion->autorid }}</span> </p>
-
+                    <p>Escrito el: {{ $publicacion->created_at }} por: <span>{{ $publicacion->autor_username }}</span> </p>
                     <p>
                     {{ $publicacion->descripcion }}
                     </p>

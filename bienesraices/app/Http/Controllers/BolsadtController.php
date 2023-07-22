@@ -37,24 +37,19 @@ class BolsadtController extends Controller
         return view('admin.adminbolsadet', compact('consultaPubbt', 'filtrar'));
 
     }
-
+    /* Vista bolsa de trabajo */
     public function indexpub(Request $request)
     {
         $publicacionesbt = DB::table('bolsadt')
-        ->get();
-
-        return view('blog', compact('publicacionesbt'));
-        
-    }
-    public function indexhomeblog(Request $request)
-    {
-        $publicacionesbolsadt = DB::table('bolsadt')
+        ->join('users', 'bolsadt.autorid', '=', 'users.id')
+            ->select('bolsadt.*', 'users.username as autor_username')
             ->inRandomOrder()
-            ->limit(3)
             ->get();
 
-        return view('index', compact('publicacionesbolsadt'));
+        return view('blog', compact('publicacionesbt'));
+
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -128,8 +123,8 @@ class BolsadtController extends Controller
             "descripcion" => $request->input('descripcion'),
             "updated_at" => Carbon::now()
         ];
-    
-        
+
+
     // Verificar si se ha subido un archivo de imagen
     if ($request->hasFile('file')) {
         $imagen = $request->file('file')->store('public/img');
@@ -139,11 +134,11 @@ class BolsadtController extends Controller
 
         DB::table('bolsadt')->where('idtrab', $id)->update($data);
 
-        
-    
+
+
         return redirect('admin.adminbolsadet')->with('confirmacion5', 'abc');
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -162,6 +157,6 @@ class BolsadtController extends Controller
     {
         $consultaIdbdt= DB::table('bolsadt')->where('idtrab',$id)->first();
         return view('entrada', compact('consultaIdbdt'));
-        
+
     }
 }

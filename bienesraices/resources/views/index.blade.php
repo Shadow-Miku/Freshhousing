@@ -90,7 +90,7 @@
 
     <div class="contenedor seccion seccion-inferior">
         <section class="blog">
-            <h3>Nuestro Blog</h3>
+            <h3>Bolsa de trabajo</h3>
             @foreach ($publicacionesbolsa as $publicacionbt)
             <article class="entrada-blog">
                 <div class="imagen">
@@ -102,10 +102,9 @@
                 </div>
 
                 <div class="texto-entrada">
-                    <a onclick="', $publicacion->idtrab) }}'">
+                    <a onclick="location.href='{{ route('publibdt.show', $publicacionbt->idtrab) }}'">
                         <h4>{{ $publicacionbt->titulo }}</h4>
-                        <p class="informacion-meta">Escrito el: <span>{{ $publicacionbt->created_at }}</span> por: <span>{{ $publicacionbt->autorid }}</span> </p>
-
+                        <p class="informacion-meta">Escrito el: <span>{{ $publicacionbt->created_at }}</span> por: <span>{{ $publicacionbt->autor_username }}</span> </p>
                         <p>
                         {{ $publicacionbt->descripcion }}
                         </p>
