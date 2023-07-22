@@ -30,7 +30,7 @@
                     <legend>Información General</legend>
 
                         <label for="imagen">Imagen:</label>
-                        <input class="form-control" type="file" id="imagen" accept="image/*" name="fileadmin" required>
+                        <input class="form-control" type="file" id="imagen" accept="image/*" name="fileadmin">
 
                         <img  class="form-control" src="{{ auth()->user()->url }}" class="imagen-small" style="max-width: 200px;">
 

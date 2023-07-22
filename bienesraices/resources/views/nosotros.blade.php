@@ -74,17 +74,26 @@
 
     </div>
 </section>
-<section>
-    <h1>Nos puedes encontrar aqui</h1>
-    // Leaflet
-    // Mapa de ubicación de nuestras propiedades
+
+<style>
+    .mapa {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+</style>
+
+<section class="mapa">
+    <h1>Nos puedes encontrar aquí</h1>
     <x-maps-leaflet
         :centerPoint="['lat' => 20.58806, 'long' => -100.38806]"
         :zoomLevel="16"
         :markers="[['lat' => 20.589872, 'long' => -100.3870118]]"
-        >
+    >
     </x-maps-leaflet>
 </section>
+
 
 
 
