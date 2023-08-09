@@ -14,15 +14,15 @@
                         <div class="form-group">
                             <label>Titulo: {{$consultaId->titulo}}</label>
                             <label>Categoria: {{$consultaId->categoriaid}}</label>
-                            <label>Imagen: {{$consultaId->url}}</label>
+                            <img src="{{ $consultaId->url }}" style="max-width: 200px;">
                             <label>Descripcion: {{$consultaId->descripcion}}</label>
                         </div>
                     </fieldset>
                     @csrf
                     @method('delete')
                     <div class="d-flex justify-content-between">
-                        <a href="{{ url()->previous() }}" class="btn btn-primary">Volver</a>
-                        <button type="submit" class="btn btn-danger m-1">Si, elimínalo</button>
+                        <a href="{{ url()->previous() }}" class="btn btn-primary">Cancelar</a>
+                        <button type="submit" class="btn btn-danger m-1">Confirmar</button>
                     </div>
                 </form>
             </div>

@@ -22,23 +22,23 @@
     }
 </style>
 <main class="contenedor seccion">
-    <h1>Sobre nuestra Empresa de Bienes Raíces</h1>
+    <h1>¿Qué es Fresh Housing?</h1>
     <div class="contenido-nosotros">
         <div class="imagen">
             <picture>
-                <source srcset="/img/nosotros.webp" type="image/webp">
-                <source srcset="/img/nosotros.jpg" type="image/jpeg">
-                <img loading="lazy" src="/img/nosotros.jpg" alt="Sobre Nosotros">
+
+                <source srcset="/img/FreshHousing.png" type="image/png">
+                <img loading="lazy" src="/img/FreshHousing.png" alt="Sobre Nosotros">
             </picture>
         </div>
         <div class="texto-nosotros">
             <blockquote>
-                25 Años de experiencia en el mercado
+                Proyecto de publicaciones de bienes raices.
             </blockquote>
 
-            <p>Somos una empresa de bienes raíces especializada en la compra, venta y renta de propiedades de alta calidad. Nos enorgullecemos de brindar un servicio excepcional y personalizado a cada uno de nuestros clientes.</p>
+            <p>Somos un proyecto que busca ofrecer a los usuarios una plataforma intuitiva y amigable que les facilite la búsqueda y adquisición de viviendas según sus necesidades y preferencias.</p>
 
-            <p>Contamos con un equipo de expertos en el mercado inmobiliario que se encargan de ofrecer soluciones únicas a las necesidades de cada cliente. Nuestra misión es superar las expectativas de nuestros clientes y asegurarnos de que tengan una experiencia satisfactoria al trabajar con nosotros.</p>
+            <p>Esta aplicación web busca facilitar a las empresas inmobiliarias la promoción de productos y servicios, proporcionar a las empresas una aplicación web que tome en cuenta la experiencia del usuario, reducir los costos de operación de este tipo de plataformas, crear una aplicación web enfocada en la mejora continua, mientras reducimos los tiempos y la complejidad de las operaciones de gestión.</p>
         </div>
     </div>
 </main>

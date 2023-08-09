@@ -78,7 +78,7 @@
         <br>
         <div class="d-flex justify-content-between">
             <a href="{{ url()->previous() }}" class="btn btn-secondary">Volver</a>
-        <input type="submit" value="Actualizar Propiedad" class="btn btn-success">
+        <input type="submit" value="Actualizar Publicación" class="btn btn-success">
         </div>
     </form>
 

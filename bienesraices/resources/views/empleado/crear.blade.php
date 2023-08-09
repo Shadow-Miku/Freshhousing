@@ -17,7 +17,7 @@
             </div>
 
             <label class="form-label" for="titulo">Titulo:</label>
-            <input class="form-control"  type="text" id="titulo" name="titulo" placeholder="Titulo Propiedad" >
+            <input class="form-control"  type="text" id="titulo" name="titulo" placeholder="Titulo Propiedad" value="{{old('titulo')}}" required>
 
             <label class="form-label" for="titulo">Categoria:</label>
             <select class="form-select" name="categoria" value="{{old('categoria')}}" aria-label="Default select example">
@@ -27,7 +27,7 @@
             </select>
 
             <label class="form-label" for="precio">Precio:</label>
-            <input class="form-control"  type="number" id="precio" name="precio" placeholder="Precio Propiedad" >
+            <input class="form-control"  type="number" id="precio" name="precio" placeholder="Precio Propiedad" value="{{old('precio')}}"  required>
 
             <label class="form-label" for="titulo">Moneda:</label>
             <select class="form-select" name="moneda" value="{{old('moneda')}}" aria-label="Default select example">
@@ -43,7 +43,7 @@
             <input class="form-control"  type="file" id="imagen" accept="image/*" name="file" required>
 
             <label class="form-label" for="descripcion">Descripción:</label>
-            <textarea class="form-control"  id="descripcion" name="descripcion"></textarea>
+            <textarea class="form-control"  id="descripcion" name="descripcion" value="{{old('descripcion')}}" required></textarea>
 
         </fieldset>
 
@@ -51,7 +51,7 @@
             <legend>Información Propiedad</legend>
 
             <label class="form-label" for="wc">Tamaño de la propiedad:</label>
-            <input class="form-control"  type="number" id="square" name="square" placeholder="Tamaño del terreno de la propiedad">
+            <input class="form-control"  type="number" id="square" name="square" placeholder="Tamaño del terreno de la propiedad" value="{{old('square')}}" required>
 
             <label class="form-label" for="habitaciones">Habitaciones:</label>
             <input
@@ -61,19 +61,21 @@
             placeholder="Ej: 3"
             min="1"
             max="9"
+            value="{{old('habitaciones')}}"
+            required
             >
 
             <label class="form-label" for="wc">Baños:</label>
-            <input class="form-control"  type="number" id="wc" name="baños" placeholder="Ej: 3" min="1" max="9" >
+            <input class="form-control"  type="number" id="wc" name="baños" placeholder="Ej: 3" min="1" max="9" value="{{old('baños')}}" required>
 
             <label class="form-label" for="estacionamiento">Estacionamiento:</label>
-            <input class="form-control"  type="number" id="estacionamiento" name="estacionamiento" placeholder="Ej: 3" min="1" max="9" >
+            <input class="form-control"  type="number" id="estacionamiento" name="estacionamiento" placeholder="Ej: 3" min="1" max="9" value="{{old('estacionamiento')}}" required>
 
         </fieldset>
         <br>
         <div class="d-flex justify-content-between">
             <a href="{{ url()->previous() }}" class="btn btn-secondary">Volver</a>
-            <input type="submit" value="Crear Propiedad" class="btn btn-success">
+            <input type="submit" value="Guardar" class="btn btn-success">
         </div>
     </form>
 
