@@ -67,7 +67,7 @@
             <div class="card-footer">
             <div class="d-flex justify-content-between">
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Volver</a>
-                <button type="submit" class="btn btn-success"> Registrar usuario </button>
+                <button type="submit" class="btn btn-success"> Guardar </button>
             </div>
             </form>
 

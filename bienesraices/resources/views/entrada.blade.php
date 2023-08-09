@@ -12,7 +12,7 @@
             <img loading="lazy" src="/img/destacada2.jpg" alt="imagen de la propiedad">
         </picture>
 
-        <p class="informacion-meta">Escrito el: <span>{{ $consultaIdbdt->created_at }}</span> por: <span>{{ $consultaIdbdt->autorid }}</span> </p>
+        <p class="informacion-meta">Escrito el: <span>{{ $consultaIdbdt->created_at }}</span> por: <span>{{ $consultaIdbdt->autor_username }}</span> </p>
 
 
         <div class="resumen-propiedad">

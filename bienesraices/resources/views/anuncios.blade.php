@@ -6,7 +6,7 @@
 @endphp
     <main class="contenedor seccion">
 
-        <h2>Casas y Depas en Venta</h2>
+        <h2>Publicaciones</h2>
 
         <div class="contenedor-anuncios">
         @foreach ($publicaciones as $publicacion)

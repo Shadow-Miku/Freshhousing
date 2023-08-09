@@ -1,6 +1,9 @@
 @extends('admin.plantillaAdmin')
 <?php $inicio = false ?>
 @section('contenido')
+@php
+    use Illuminate\Support\Str;
+@endphp
 
 <!--@if (session()->has('actualizar'))
     {!!" <script> Swal.fire(
@@ -39,7 +42,7 @@
         'Publicación registrada',
         'success'
     ) </script>"!!}
-@endif 
+@endif
 
 @if (session()->has('confirmacion5'))
     {!!" <script> Swal.fire(
@@ -47,7 +50,7 @@
         'Publicación actualizada',
         'success'
     ) </script>"!!}
-@endif 
+@endif
 
 @if (session()->has('elimina'))
     {!!" <script> Swal.fire(
@@ -96,7 +99,7 @@
                 <td>{{$consulta->titulo}}</td>
                 <td><img src="{{$consulta->url}}"  alt="Foto de la propiedad" class="imagen-small"></td>
                 <td>{{$consulta->categoria_nombre}}</td>
-                <td>{{$consulta->descripcion}}</td>
+                <td>{{ Str::limit($consulta->descripcion, $limit = 30, $end = '...') }}</td>
                 <td>
                 <button class="btn btn-warning" onclick="location.href='{{ route('adminbolsadet.edit', $consulta->idtrab) }}'">
                         <i class="bi bi-arrow-clockwise"></i> Actualizar datos de la publicacion

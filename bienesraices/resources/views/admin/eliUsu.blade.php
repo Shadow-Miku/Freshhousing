@@ -13,6 +13,7 @@
                         <legend>¿Eliminar el siguiente Usuario?</legend>
                         <div class="form-group">
                             <label>Nombre: {{$consultaId->name}}</label>
+                            <img src="{{ $consultaId->url }}" style="max-width: 200px;">
                             <label>Correo: {{$consultaId->email}}</label>
                             <label>Roll: {{$consultaId->roll}}</label>
                             <label>Creado el: {{$consultaId->created_at}}</label>
@@ -21,8 +22,8 @@
                     @csrf
                     @method('delete')
                     <div class="d-flex justify-content-between">
-                        <a href="{{ url()->previous() }}" class="btn btn-primary">Volver</a>
-                        <button type="submit" class="btn btn-danger m-1">Si, elimínalo</button>
+                        <a href="{{ url()->previous() }}" class="btn btn-primary">Cancelar</a>
+                        <button type="submit" class="btn btn-danger m-1">Confirmar</button>
                     </div>
                 </form>
             </div>

@@ -34,7 +34,7 @@
     </main>
 
     <section class="seccion contenedor">
-        <h2>Ejemplos de casas y departamentos</h2>
+        <h2>Publicaciones</h2>
 
         <div class="contenedor-anuncios">
             @foreach ($publicaciones as $publicacion)

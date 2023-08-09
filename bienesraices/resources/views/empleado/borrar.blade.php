@@ -27,8 +27,8 @@
                     @method('delete')
 
                     <div class="d-flex justify-content-between">
-                        <a href="{{ route('publicacion.index') }}" class="btn btn-primary">No, regresa a admin</a>
-                      <button type="submit" class="btn btn-danger ">Si, elimínalo</button>
+                        <a href="{{ route('publicacion.index') }}" class="btn btn-primary">Cancelar</a>
+                      <button type="submit" class="btn btn-danger">Aceptar</button>
                     </div>
                   </form>
                 </div>

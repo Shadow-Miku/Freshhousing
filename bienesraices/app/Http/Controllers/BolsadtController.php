@@ -153,9 +153,10 @@ class BolsadtController extends Controller
         return redirect('admin.adminbolsadet')->with('elimina','abc');
     }
 
+
     public function paginaPublicacionbdt($id)
     {
-        $consultaIdbdt= DB::table('bolsadt')->where('idtrab',$id)->first();
+        $consultaIdbdt= DB::table('bolsadt')->join('users', 'bolsadt.autorid', '=', 'users.id')->select('bolsadt.*', 'users.username as autor_username')->where('idtrab',$id)->first();
         return view('entrada', compact('consultaIdbdt'));
 
     }
